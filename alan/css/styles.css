@@ -1,0 +1,85 @@
+:root {
+  --finger-left: 40px;
+  --finger-width: 350px;
+  --finger-gap: 25px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: Arial, sans-serif;
+}
+  
+body {
+  font-size: 14px;
+}
+
+#canvas {
+  width: 1920px;
+  height: 1080px;
+  border: 1px solid black;
+
+  margin: 10px 0px 0px 10px;
+}
+
+#play {
+  position: relative;
+  left: 10px;
+  top: 10px;
+  
+  width: 40px;
+  height: 30px;
+}
+
+#timecode {
+  position: absolute;
+  left: 70px;
+  top: 20px;
+
+  font-family: monospace;
+  font-size: 30px;
+}
+#transport {
+  position: absolute;
+  left: 400px;
+  top: 20px;
+
+  font-family: monospace;
+  font-size: 30px;
+}
+
+
+.finger {
+  position: absolute;
+
+  top: 250px;
+  border: 1px solid black;
+}
+
+#dad {    
+  left: var(--finger-left)
+}
+
+#mom {    
+  left: calc(var(--finger-left) + (var(--finger-width) + var(--finger-gap)) * 1)
+}
+
+#bro {    
+  left: calc(var(--finger-left) + (var(--finger-width) + var(--finger-gap)) * 2)
+}
+
+#sis {    
+  left: calc(var(--finger-left) + (var(--finger-width) + var(--finger-gap)) * 3)
+}
+
+#beb {    
+  left: calc(var(--finger-left) + (var(--finger-width) + var(--finger-gap)) * 4)
+}
+
+
+.finger > img {
+  position: absolute;
+
+  top: 25%;
+}
