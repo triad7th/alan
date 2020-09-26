@@ -14,19 +14,19 @@ function createImage(fn) {
 $(document).ready(function() {
   // Transport
   $("#transport").text(midi[1].track_msgs[0].ABST);
-  // Images
-  var dad = {
-    elem: $("#dad")[0],
-    ctx: $("#dad")[0].getContext("2d"),
-    img: createImage('image/dad.png')
-  }
-  dad.ctx.drawImage(dad.img, 0, 0);
-  var mom = {
-    elem: $("#mom")[0],
-    ctx: $("#mom")[0].getContext("2d"),
-    img: createImage('image/mom.png')
-  }
-  mom.ctx.drawImage(mom.img, 0, 0);
+  // // Images
+  // var dad = {
+  //   elem: $("#dad")[0],
+  //   ctx: $("#dad")[0].getContext("2d"),
+  //   img: createImage('image/dad.png')
+  // }
+  // dad.ctx.drawImage(dad.img, 0, 0);
+  // var mom = {
+  //   elem: $("#mom")[0],
+  //   ctx: $("#mom")[0].getContext("2d"),
+  //   img: createImage('image/mom.png')
+  // }
+  // mom.ctx.drawImage(mom.img, 0, 0);
 
   // Song Play
   $("#play").click(function() {
@@ -45,19 +45,15 @@ $(document).ready(function() {
         switch(msgs[idx].note)
         {
           case "A#4":
-            $("#dad").css("background-color", "");
             $("#tick")[0].play();
             break;  
-          case "G#3":
-            $("#dad").css("background-color", "Red");
+          case "G#3":            
             $("#tick")[0].play();
             break;
-          case "G#4":
-            $("#dad").css("background-color", "Blue");
+          case "G#4":          
             $("#tick")[0].play();
             break;
-          default:
-            $("#dad").css("background-color", "");
+          default:            
             break;
         }
         idx++;
