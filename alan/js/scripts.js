@@ -1,66 +1,26 @@
 import { msToHMS } from './functions.js';
-import { midi } from '../midi/ff_type_001.js'
+import * as fam from './family.js'
 
 var hTimecode;
-var idx=0;
-var msgs = midi[1].track_msgs
-
-function createImage(fn) {
-  var img=document.createElement('img');
-  img.src=fn
-  return img
-}
 
 $(document).ready(function() {
-  // Transport
-  $("#transport").text(midi[1].track_msgs[0].ABST);
-  // // Images
-  // var dad = {
-  //   elem: $("#dad")[0],
-  //   ctx: $("#dad")[0].getContext("2d"),
-  //   img: createImage('image/dad.png')
-  // }
-  // dad.ctx.drawImage(dad.img, 0, 0);
-  // var mom = {
-  //   elem: $("#mom")[0],
-  //   ctx: $("#mom")[0].getContext("2d"),
-  //   img: createImage('image/mom.png')
-  // }
-  // mom.ctx.drawImage(mom.img, 0, 0);
+    init() // env    
+    timeline.pause() // timeline pause
 
-  // Song Play
-  $("#play").click(function() {
-    // Timecode
-    var timeBegin = new Date();  
-    if (hTimecode) {
-      clearInterval(hTimecode);
-      idx=0;
-    }
-    hTimecode = setInterval(function() {
-      var abst = (new Date()).getTime() - timeBegin.getTime();
-      if (abst >= msgs[idx].ABST * 1000)
-      {
-        // $("#transport").text(msToHMS(msgs[idx].ABST * 1000));
-        $("#transport").text(msgs[idx].MBT);
-        switch(msgs[idx].note)
-        {
-          case "A#4":
-            $("#tick")[0].play();
-            break;  
-          case "G#3":            
-            $("#tick")[0].play();
-            break;
-          case "G#4":          
-            $("#tick")[0].play();
-            break;
-          default:            
-            break;
-        }
-        idx++;
-      }
-      $("#timecode").text(msToHMS(abst));
-    }, 10)
-    $("#song")[0].load();
-    $("#song")[0].play();
-  });  
-});
+    fam.locate() // family locate
+    fam.choreo() // set choreography 
+    
+    $("#play").click(function() {
+      var timeBegin = new Date()
+      if (hTimecode) clearInterval(hTimecode) // clean hTimecode
+      
+      timeline.restart() // run timeline
+      hTimecode = setInterval(function() {
+        var abst = (new Date()).getTime() - timeBegin.getTime()
+        $("#timecode").text(msToHMS(abst))
+      }, 10)
+      $("#song")[0].load()
+      $("#song")[0].play()
+    });  
+})
+
