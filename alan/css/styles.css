@@ -45,8 +45,6 @@ body {
   border-color: grey;
   border-image: initial;
 }
-
-
   
 :root.is-transparent #scene {
   background: transparent;
