@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  padding: 0;
+}  
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+}
+
+.layer {
+  position: absolute;  
+}
+
+.pos {
+  outline: solid 3px black;  
+}
+.ang {
+  outline: dashed 3px blue;
+}
+.con {
+  outline: dashed 3px red;
+}
+
+.layer::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    content: close-quote;
+    outline: solid 3px;
+    outline-color: inherit;
+    transform: translate(-50%, -50%);    
+}
+
+#scene {
+  width: 1920px;
+  height: 1080px;
+  contain: strict;
+  background-image: url(../images/farm.png);
+  overflow: hidden;
+  border-width: 1px;
+  border-style: solid;
+  border-color: grey;
+  border-image: initial;
+}
+ 
+#dadp1 {
+  left: 500px;
+  top: 200px;  
+  z-index: -1;
+}
+
+#dada1 {
+  width: 600px;
+  height: 700px;
+  left: -128px;
+  top: -128px;
+  z-index: -10;
+}
+
+#dadc1 {
+  width: 256px;
+  height: 256px;  
+  z-index: -100;
+}
