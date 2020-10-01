@@ -1,9 +1,9 @@
 import { Layer } from './layer.js'
 
-class Widget {
-  constructor({name, contents, x, y, w, h, angle, contentId}) {
+export class Widget {
+  constructor({name, contents, x, y, w, h, angle, content}) {
     this.name = name;
-    this.content = document.getElementById(contentId);
+    this.content = content;
     this.layers = [];
 
     // pos cluster
@@ -38,7 +38,10 @@ class Widget {
     this.layers = [...this.layers, ...cluster];
     this.getLayer('A1').child = this.getLayer('C1');
 
-    this.generateDom();    
+    // content
+    if(this.content) {
+      this.getLayer('C1').dom.append(this.content);
+    }
   }
 
   // getter
@@ -57,9 +60,7 @@ class Widget {
   getLayer(name){
     return this.layers.find((v, i, o) => { if (v.name === name) return true; });
   }
-  generateDom(){
-    var wrapperElem = document.getElementById(this.name);
-    var contentElem = wrapperElem.children;    
+  generateDom(){    
     for(let layer of this.layers){
       layer.dom.setAttribute('id', `${this.name}${layer.name}`);
       if(layer.dom) {
@@ -70,11 +71,47 @@ class Widget {
         }
       }
     }
-    this.lastLayer.dom.append(...contentElem);
+    this.lastLayer.dom.append(this.content);
+    return this.getLayer('P1').dom;
+  }
+
+  // static methods
+  static attach(widgets, parentId) {  
+    // collect all widgets and attach them to target parent
+    const parent = document.getElementById(parentId);
+    for(const widget in widgets) {
+      parent.append(widgets[widget].generateDom());
+    }
+  }
+
+  // helpers
+  static conFromImg(fn) {
+    // create a simple img elem
+    const img = document.createElement('img');
+    img.setAttribute('src', fn);
+    return img;
+  }
+  static widgets(nameList) {
+    // create simple widgets
+    const gap = 125;
+    var widgets = {};
+    nameList.forEach((name, idx) => {
+      widgets[name] = new Widget({
+        name: name,
+        x: idx * (256 + gap) + 175,
+        y: 350,
+        w: 256,
+        h: 256,
+        angle: 0, 
+        content: this.conFromImg(`./images/${name}.png`)
+      });
+    });
+    return widgets;    
   }
 }
 
+/*
 var widget = new Widget({name: 'dad', x: 400, y: 300, w:256, h:256, angle: 0, contentId: 'content' });
 var dad = document.getElementById('dad');
 dad.append(widget.dom);
-
+*/

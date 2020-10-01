@@ -1,18 +1,18 @@
-import { msToHMS } from './functions.js';
-import * as fam from './family.js'
+import { msToHMS } from './functions/functions.js';
+import { Widget } from './classes/widget.js'
+import * as fam from './functions/family.js'
 
 var hTimecode;
 
 $(document).ready(function() {
     init() // env    
     timeline.pause() // timeline pause
-
-    fam.locate() // family locate
-    fam.choreo() // set choreography 
+    var widgets = Widget.widgets(['dad', 'mom', 'bro', 'sis', 'beb']);
+    Widget.attach(widgets, 'scene');
     
     $("#play").click(function() {
       var timeBegin = new Date()
-      if (hTimecode) clearInterval(hTimecode) // clean hTimecode
+      if(hTimecode) clearInterval(hTimecode) // clean hTimecode
       
       timeline.restart() // run timeline
       hTimecode = setInterval(function() {

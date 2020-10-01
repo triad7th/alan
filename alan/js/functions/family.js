@@ -1,4 +1,4 @@
-import * as env from './env.js'
+import * as env from '../env.js'
 
 const left = 50
 const gap = 125
