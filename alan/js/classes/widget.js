@@ -1,9 +1,12 @@
 import { Layer } from './layer.js'
+import { widgetsFromMidi } from '../functions/widgetsFromMidi.js'
+import { parseTimeline } from '../functions/parseTimeline.js'
 
 export class Widget {
-  constructor({name, contents, x, y, w, h, angle, content}) {
+  constructor({name, x, y, w, h, content}) {
     this.name = name;
     this.content = content;
+    this.tl = undefined;
     this.layers = [];
 
     // pos cluster
@@ -25,7 +28,7 @@ export class Widget {
     // width: any px
     // height: any px
     var cluster = this.getCluster('A');
-    cluster[0].setLayer({ name: 'A1', x: -0.5 * w, y: -0.5 * h, w: w, h: h, angle: angle });
+    cluster[0].setLayer({ name: 'A1', x: -0.5 * w, y: -0.5 * h, w: w, h: h});
     this.layers = [...this.layers, ...cluster];
     this.getLayer('P1').child = this.getLayer('A1'); // connect pos cluster
 
@@ -49,7 +52,6 @@ export class Widget {
   get y() { return this.getLayer('P1').y; }
   get w() { return this.getLayer('C1').w; }
   get h() { return this.getLayer('C1').h; }
-  get angle() { return this.getLayer('A1').angle; }
   get dom() { return this.getLayer('P1').dom; }
   get lastLayer() {return this.layers[this.layers.length - 1]; }
   
@@ -57,10 +59,10 @@ export class Widget {
     var l1 = new Layer({name: `${type}1`});
     return [l1];
   }
-  getLayer(name){
+  getLayer(name) {
     return this.layers.find((v, i, o) => { if (v.name === name) return true; });
   }
-  generateDom(){    
+  generateDom() {    
     for(let layer of this.layers){
       layer.dom.setAttribute('id', `${this.name}${layer.name}`);
       if(layer.dom) {
@@ -74,13 +76,26 @@ export class Widget {
     this.lastLayer.dom.append(this.content);
     return this.getLayer('P1').dom;
   }
+  parseTimeline() {
+    const msgs = this.tl;
+    this.tl = gsap.timeline();
+    return parseTimeline(this, msgs);
+  }
+
+  // setter
+  set x(x) { this.getLayer('P1').x = x; }
+  set y(y) { this.getLayer('P1').y = y; }
+  set w(w) { this.getLayer('C1').w = w; }
+  set h(w) { this.getLayer('C1').h = h; }
+  set set({x, y, w, h}) { this.x = x, this.y = y, this.w = w, this.h = h; }
 
   // static methods
-  static attach(widgets, parentId) {  
+  static attach(widgets, parentId, gTl/*Global Timeline*/) {  
     // collect all widgets and attach them to target parent
     const parent = document.getElementById(parentId);
-    for(const widget in widgets) {
-      parent.append(widgets[widget].generateDom());
+    for(const wgName in widgets) {
+      parent.append(widgets[wgName].generateDom());      
+      gTl.add(widgets[wgName].parseTimeline(), 0);
     }
   }
 
@@ -91,7 +106,7 @@ export class Widget {
     img.setAttribute('src', fn);
     return img;
   }
-  static widgets(nameList) {
+  static widgetsFromList(nameList) {
     // create simple widgets
     const gap = 125;
     var widgets = {};
@@ -102,12 +117,12 @@ export class Widget {
         y: 350,
         w: 256,
         h: 256,
-        angle: 0, 
         content: this.conFromImg(`./images/${name}.png`)
       });
     });
     return widgets;    
   }
+  static widgetsFromMidi = widgetsFromMidi;  
 }
 
 /*

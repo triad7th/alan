@@ -9,7 +9,6 @@ export class Layer {
     this.y = args.y;
     this.w = args.w;
     this.h = args.ht;
-    this.angle = args.angle;
 
     this.dom.classList.add('layer');
     this.dom.classList.add(`${this.type}`);
@@ -20,17 +19,16 @@ export class Layer {
   get y() { return parseInt(this.dom.style.top); }
   get w() { return parseInt(this.dom.style.width); }
   get h() { return parseInt(this.dom.style.height); }
-  get angle() { return this.dom.style.rotate; }
   get parent() { return this._parent; }
   get child() { return this._child; }
-  get type() { return this.name[0]; }
+  get type() { return this.name.slice(-2, -1); }
+  get id() { return `#${this.dom.id}`; }
 
   // Setter
   set x(x) { this.dom.style.left = `${x}px`; }
   set y(y) { this.dom.style.top = `${y}px`; }
   set w(w) { this.dom.style.width = `${w}px`; }
   set h(h) { this.dom.style.height = `${h}px`; }
-  set angle(angle) { this.dom.style.rotate = angle; }
   set child(child) {
     this._child = child;
     if (child !== undefined) child._parent = this;
@@ -38,7 +36,7 @@ export class Layer {
   set parent(parent) {
     this._parent = parent;
   }
-  setLayer({name, timeline, parent, child, x, y, w, h, angle}) {
+  setLayer({name, timeline, parent, child, x, y, w, h}) {
     this.name = this.name || name; // [P|A|C1..4]
     this.timeline = this.timeline || timeline;
     this.parent = this.parent || parent;
@@ -47,7 +45,6 @@ export class Layer {
     this.y = this.y || y;
     this.w = this.w || w;
     this.h = this.h || h;
-    this.angle = this.angle || angle;
   }
   
   // toString

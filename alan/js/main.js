@@ -1,14 +1,15 @@
 import { msToHMS } from './functions/functions.js';
 import { Widget } from './classes/widget.js'
-import * as fam from './functions/family.js'
+import { choreoMidi } from '../midi/ff_type_002.js';
 
 var hTimecode;
 
 $(document).ready(function() {
     init() // env    
     timeline.pause() // timeline pause
-    var widgets = Widget.widgets(['dad', 'mom', 'bro', 'sis', 'beb']);
-    Widget.attach(widgets, 'scene');
+    // var widgets = Widget.widgetsFromList(['dad', 'mom', 'bro', 'sis', 'beb']);
+    var widgets = Widget.widgetsFromMidi(choreoMidi);
+    Widget.attach(widgets, 'scene', timeline);
     
     $("#play").click(function() {
       var timeBegin = new Date()
