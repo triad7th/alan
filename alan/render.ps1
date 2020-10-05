@@ -7,8 +7,7 @@ param(
     $video
 )
 
-$item = gi $item
-$url = "file://$($item.FullName)?render"
+$url = "http://localhost:8080?render"
 if ($video -eq $null) {
     $video = $item.BaseName + ".mp4"
 }
