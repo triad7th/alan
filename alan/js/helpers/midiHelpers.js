@@ -4,7 +4,6 @@ Number.prototype.pad = function(size) {
   return s;
 }
 
-
 function msToHMS(ms) {
   // 1- Convert to seconds:
   var seconds = ms / 1000;

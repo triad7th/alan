@@ -1,4 +1,4 @@
-﻿export const choreoMidi =
+﻿export const sequence =
 [
     {
         "track_msgs": [
@@ -8,8 +8,8 @@
                 "MBT": "01:01:000",
                 "is_meta": true,
                 "meta": "track_name",
-                "name": "MELODY",
-                "repr": "  meta | track_name       | name             | MELODY                              | tick:          0 | secs:              0.0",
+                "name": "melody",
+                "repr": "  meta | track_name       | name             | melody                              | tick:          0 | secs:              0.0",
                 "tick": 0,
                 "trk": 1
             },
@@ -1637,7 +1637,7 @@
                 "trk": 1
             }
         ],
-        "track_name": "MELODY",
+        "track_name": "melody",
         "track_no": 1
     },
     {
@@ -1648,46 +1648,8 @@
                 "MBT": "01:01:000",
                 "is_meta": true,
                 "meta": "track_name",
-                "name": "METRONOME",
-                "repr": "  meta | track_name       | name             | METRONOME                           | tick:          0 | secs:              0.0",
-                "tick": 0,
-                "trk": 2
-            },
-            {
-                "ABST": 0.0,
-                "HMSF": "00:00:00:000",
-                "MBT": "01:01:000",
-                "ch": 9,
-                "control": 0,
-                "is_meta": false,
-                "msg": "control_change",
-                "repr": "   msg | control_change   | ch  : 9          | ctrl: 0          | val : 86         | tick:          0 | secs:              0.0",
-                "tick": 0,
-                "trk": 2,
-                "val": 86
-            },
-            {
-                "ABST": 0.0,
-                "HMSF": "00:00:00:000",
-                "MBT": "01:01:000",
-                "ch": 9,
-                "control": 32,
-                "is_meta": false,
-                "msg": "control_change",
-                "repr": "   msg | control_change   | ch  : 9          | ctrl: 32         | val : 64         | tick:          0 | secs:              0.0",
-                "tick": 0,
-                "trk": 2,
-                "val": 64
-            },
-            {
-                "ABST": 0.0,
-                "HMSF": "00:00:00:000",
-                "MBT": "01:01:000",
-                "ch": 9,
-                "is_meta": false,
-                "msg": "program_change",
-                "prgm": 0,
-                "repr": "   msg | program_change   | ch  : 9          | prgm: 0          |                  | tick:          0 | secs:              0.0",
+                "name": "metronome",
+                "repr": "  meta | track_name       | name             | metronome                           | tick:          0 | secs:              0.0",
                 "tick": 0,
                 "trk": 2
             },
@@ -2962,8 +2924,171 @@
                 "trk": 2
             }
         ],
-        "track_name": "METRONOME",
+        "track_name": "metronome",
         "track_no": 2
+    },
+    {
+        "track_msgs": [
+            {
+                "ABST": 0.0,
+                "HMSF": "00:00:00:000",
+                "MBT": "01:01:000",
+                "is_meta": true,
+                "meta": "track_name",
+                "name": "#set",
+                "repr": "  meta | track_name       | name             | #set                                | tick:          0 | secs:              0.0",
+                "tick": 0,
+                "trk": 3
+            },
+            {
+                "ABST": 0.0,
+                "HMSF": "00:00:00:000",
+                "MBT": "01:01:000",
+                "ch": 9,
+                "control": 0,
+                "is_meta": false,
+                "msg": "control_change",
+                "repr": "   msg | control_change   | ch  : 9          | ctrl: 0          | val : 86         | tick:          0 | secs:              0.0",
+                "tick": 0,
+                "trk": 3,
+                "val": 86
+            },
+            {
+                "ABST": 0.00125,
+                "HMSF": "00:00:00:001",
+                "MBT": "01:01:001",
+                "ch": 9,
+                "control": 32,
+                "is_meta": false,
+                "msg": "control_change",
+                "repr": "   msg | control_change   | ch  : 9          | ctrl: 32         | val : 64         | tick:          1 | secs:          0.00125",
+                "tick": 1,
+                "trk": 3,
+                "val": 64
+            },
+            {
+                "ABST": 0.00125,
+                "HMSF": "00:00:00:001",
+                "MBT": "01:01:001",
+                "ch": 9,
+                "is_meta": false,
+                "msg": "program_change",
+                "prgm": 0,
+                "repr": "   msg | program_change   | ch  : 9          | prgm: 0          |                  | tick:          0 | secs:              0.0",
+                "tick": 1,
+                "trk": 3
+            },
+            {
+                "ABST": 0.00125,
+                "HMSF": "00:00:00:001",
+                "MBT": "01:01:001",
+                "is_meta": true,
+                "meta": "text",
+                "repr": "  meta | text             | text             | { \"cmd\": \"create\", \"type\": \"image\", | tick:          0 | secs:              0.0",
+                "text": "{ \"cmd\": \"create\", \"type\": \"image\", \"name\": \"set\", \"x\": 960, \"y\": 540, \"w\": 1920, \"h\": 1080,  \"src\": \"farm.png\" }",
+                "tick": 1,
+                "trk": 3
+            },
+            {
+                "ABST": 0.0025,
+                "HMSF": "00:00:00:002",
+                "MBT": "01:01:002",
+                "is_meta": true,
+                "meta": "text",
+                "repr": "  meta | text             | text             | { \"cmd\": \"update\", \"type\": \"content | tick:          1 | secs:          0.00125",
+                "text": "{ \"cmd\": \"update\", \"type\": \"content\", \"x\": \"-25%\", \"y\": \"-25%\", \"w\": \"150%\", \"h\": \"150%\"}",
+                "tick": 2,
+                "trk": 3
+            },
+            {
+                "ABST": 0.0025,
+                "HMSF": "00:00:00:002",
+                "MBT": "01:01:002",
+                "is_meta": true,
+                "meta": "end_of_track",
+                "repr": "  meta | end_of_track                                                              | tick:          0 | secs:              0.0",
+                "tick": 2,
+                "trk": 3
+            }
+        ],
+        "track_name": "#set",
+        "track_no": 3
+    },
+    {
+        "track_msgs": [
+            {
+                "ABST": 0.0,
+                "HMSF": "00:00:00:000",
+                "MBT": "01:01:000",
+                "is_meta": true,
+                "meta": "track_name",
+                "name": "#parent",
+                "repr": "  meta | track_name       | name             | #parent                             | tick:          0 | secs:              0.0",
+                "tick": 0,
+                "trk": 4
+            },
+            {
+                "ABST": 0.0,
+                "HMSF": "00:00:00:000",
+                "MBT": "01:01:000",
+                "ch": 9,
+                "control": 0,
+                "is_meta": false,
+                "msg": "control_change",
+                "repr": "   msg | control_change   | ch  : 9          | ctrl: 0          | val : 86         | tick:          0 | secs:              0.0",
+                "tick": 0,
+                "trk": 4,
+                "val": 86
+            },
+            {
+                "ABST": 0.00125,
+                "HMSF": "00:00:00:001",
+                "MBT": "01:01:001",
+                "ch": 9,
+                "control": 32,
+                "is_meta": false,
+                "msg": "control_change",
+                "repr": "   msg | control_change   | ch  : 9          | ctrl: 32         | val : 64         | tick:          1 | secs:          0.00125",
+                "tick": 1,
+                "trk": 4,
+                "val": 64
+            },
+            {
+                "ABST": 0.00125,
+                "HMSF": "00:00:00:001",
+                "MBT": "01:01:001",
+                "ch": 9,
+                "is_meta": false,
+                "msg": "program_change",
+                "prgm": 0,
+                "repr": "   msg | program_change   | ch  : 9          | prgm: 0          |                  | tick:          0 | secs:              0.0",
+                "tick": 1,
+                "trk": 4
+            },
+            {
+                "ABST": 0.00125,
+                "HMSF": "00:00:00:001",
+                "MBT": "01:01:001",
+                "is_meta": true,
+                "meta": "text",
+                "repr": "  meta | text             | text             | { \"cmd\": \"create\", \"type\": \"contain | tick:          0 | secs:              0.0",
+                "text": "{ \"cmd\": \"create\", \"type\": \"container\", \"name\": \"parent\", \"x\": 0, \"y\": 0, \"p\": \"set\" }",
+                "tick": 1,
+                "trk": 4
+            },
+            {
+                "ABST": 0.00125,
+                "HMSF": "00:00:00:001",
+                "MBT": "01:01:001",
+                "is_meta": true,
+                "meta": "end_of_track",
+                "repr": "  meta | end_of_track                                                              | tick:          0 | secs:              0.0",
+                "tick": 1,
+                "trk": 4
+            }
+        ],
+        "track_name": "#parent",
+        "track_no": 4
     },
     {
         "track_msgs": [
@@ -2976,7 +3101,7 @@
                 "name": "#dad",
                 "repr": "  meta | track_name       | name             | #dad                                | tick:          0 | secs:              0.0",
                 "tick": 0,
-                "trk": 3
+                "trk": 5
             },
             {
                 "ABST": 0.00125,
@@ -2984,10 +3109,10 @@
                 "MBT": "01:01:001",
                 "is_meta": true,
                 "meta": "text",
-                "repr": "  meta | text             | text             | { \"type\": \"create\", \"name\": \"dad\",  | tick:          1 | secs:          0.00125",
-                "text": "{ \"type\": \"create\", \"name\": \"dad\", \"x\": 175, \"y\": 350, \"w\": 256, \"h\": 256 }",
+                "repr": "  meta | text             | text             | { \"cmd\": \"create\", \"type\": \"image\", | tick:          1 | secs:          0.00125",
+                "text": "{ \"cmd\": \"create\", \"type\": \"image\", \"name\": \"dad\", \"x\": 175, \"y\": 350, \"w\": 200, \"h\": 200, \"p\": \"parent\" }",
                 "tick": 1,
-                "trk": 3
+                "trk": 5
             },
             {
                 "ABST": 2.4,
@@ -3001,7 +3126,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:       1919 | secs:            2.399",
                 "tick": 1920,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3016,7 +3141,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 2400,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3031,7 +3156,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 2880,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3046,7 +3171,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 3360,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3061,7 +3186,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 3840,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3076,7 +3201,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 4320,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3089,9 +3214,24 @@
                 "is_meta": false,
                 "msg": "note_on",
                 "note": "C 3",
-                "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
+                "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 94         | tick:          0 | secs:              0.0",
                 "tick": 4800,
-                "trk": 3,
+                "trk": 5,
+                "vel": 94
+            },
+            {
+                "ABST": 6.6000000000000005,
+                "HMSF": "00:00:06:600",
+                "MBT": "03:04:000",
+                "ch": 0,
+                "dSecs": 4.2,
+                "dTick": 3360,
+                "is_meta": false,
+                "msg": "note_on",
+                "note": "D 3",
+                "repr": "   msg | note_on          | ch  : 0          | note: D 3        | vel : 100        | tick:          0 | secs:              0.0",
+                "tick": 5280,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3106,7 +3246,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 5280,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3121,7 +3261,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 5760,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3136,7 +3276,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 6240,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3151,7 +3291,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 6720,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3166,7 +3306,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 7200,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3181,7 +3321,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 7680,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3196,7 +3336,22 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 8160,
-                "trk": 3,
+                "trk": 5,
+                "vel": 100
+            },
+            {
+                "ABST": 10.8,
+                "HMSF": "00:00:10:800",
+                "MBT": "05:03:000",
+                "ch": 0,
+                "dSecs": 1.1999999999999993,
+                "dTick": 960,
+                "is_meta": false,
+                "msg": "note_on",
+                "note": "D#3",
+                "repr": "   msg | note_on          | ch  : 0          | note: D#3        | vel : 100        | tick:          0 | secs:              0.0",
+                "tick": 8640,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3211,7 +3366,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 8640,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3226,7 +3381,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 9120,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3241,7 +3396,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 9600,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3256,7 +3411,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 10080,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3271,7 +3426,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 10560,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3286,7 +3441,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 11040,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3301,7 +3456,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 11520,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3316,7 +3471,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 12000,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3331,7 +3486,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 12480,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3346,7 +3501,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 12960,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3361,7 +3516,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 13440,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3376,7 +3531,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 13920,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3391,7 +3546,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 14400,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3406,7 +3561,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 14880,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3421,7 +3576,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 15360,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3436,7 +3591,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 15840,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3451,7 +3606,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 16320,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3466,7 +3621,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 16800,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3481,7 +3636,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 17280,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3496,7 +3651,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 17760,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3511,7 +3666,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 18240,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3526,7 +3681,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 18720,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3541,7 +3696,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 19200,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3556,7 +3711,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 19680,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3571,7 +3726,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 20160,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3586,7 +3741,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 20640,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3601,7 +3756,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 21120,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3616,7 +3771,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 21600,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3631,7 +3786,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 22080,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3646,7 +3801,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 22560,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3661,7 +3816,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 23040,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3676,7 +3831,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 23520,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3691,7 +3846,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 24000,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3706,7 +3861,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 24480,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3721,7 +3876,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 24960,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3736,7 +3891,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 25440,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3751,7 +3906,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 25920,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3766,7 +3921,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 26400,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3781,7 +3936,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 26880,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3796,7 +3951,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 27360,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3811,7 +3966,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 27840,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3826,7 +3981,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 28320,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3841,7 +3996,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 28800,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3856,7 +4011,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 29280,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3871,7 +4026,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 29760,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3886,7 +4041,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 30240,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3901,7 +4056,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 30720,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3916,7 +4071,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 31200,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3931,7 +4086,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 31680,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3946,7 +4101,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 32160,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3961,7 +4116,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 32640,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3976,7 +4131,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 33120,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -3991,7 +4146,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 33600,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -4006,7 +4161,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 34080,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -4021,7 +4176,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 34560,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -4036,7 +4191,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 35040,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -4051,7 +4206,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 35520,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -4066,7 +4221,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 36000,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -4081,7 +4236,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 36480,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -4096,7 +4251,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 36960,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -4111,7 +4266,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 37440,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -4126,7 +4281,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 37920,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -4141,7 +4296,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 38400,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -4156,7 +4311,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 38880,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -4171,7 +4326,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 39360,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -4186,7 +4341,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 39840,
-                "trk": 3,
+                "trk": 5,
                 "vel": 100
             },
             {
@@ -4197,11 +4352,11 @@
                 "meta": "end_of_track",
                 "repr": "  meta | end_of_track                                                              | tick:          0 | secs:              0.0",
                 "tick": 40320,
-                "trk": 3
+                "trk": 5
             }
         ],
         "track_name": "#dad",
-        "track_no": 3
+        "track_no": 5
     },
     {
         "track_msgs": [
@@ -4214,7 +4369,7 @@
                 "name": "#mom",
                 "repr": "  meta | track_name       | name             | #mom                                | tick:          0 | secs:              0.0",
                 "tick": 0,
-                "trk": 4
+                "trk": 6
             },
             {
                 "ABST": 0.00125,
@@ -4222,10 +4377,10 @@
                 "MBT": "01:01:001",
                 "is_meta": true,
                 "meta": "text",
-                "repr": "  meta | text             | text             | { \"type\": \"create\", \"name\": \"mom\",  | tick:          1 | secs:          0.00125",
-                "text": "{ \"type\": \"create\", \"name\": \"mom\", \"x\": 556, \"y\": 350, \"w\": 256, \"h\": 256 }",
+                "repr": "  meta | text             | text             | { \"cmd\": \"create\", \"type\": \"image\", | tick:          1 | secs:          0.00125",
+                "text": "{ \"cmd\": \"create\", \"type\": \"image\", \"name\": \"mom\", \"x\": 556, \"y\": 350, \"w\": 200, \"h\": 200, \"p\": \"parent\" }",
                 "tick": 1,
-                "trk": 4
+                "trk": 6
             },
             {
                 "ABST": 2.4,
@@ -4239,7 +4394,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:       1919 | secs:            2.399",
                 "tick": 1920,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4254,7 +4409,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 2400,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4269,7 +4424,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 2880,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4284,7 +4439,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 3360,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4299,7 +4454,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 3840,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4314,7 +4469,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 4320,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4329,7 +4484,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 4800,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4344,7 +4499,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 5280,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4359,7 +4514,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 5760,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4374,7 +4529,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 6240,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4389,7 +4544,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 6720,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4404,7 +4559,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 7200,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4419,7 +4574,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 7680,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4434,7 +4589,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 8160,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4449,7 +4604,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 8640,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4464,7 +4619,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 9120,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4479,7 +4634,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 9600,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4494,7 +4649,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 10080,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4509,7 +4664,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 10560,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4524,7 +4679,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 11040,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4539,7 +4694,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 11520,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4554,7 +4709,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 12000,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4569,7 +4724,22 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 12480,
-                "trk": 4,
+                "trk": 6,
+                "vel": 100
+            },
+            {
+                "ABST": 16.2,
+                "HMSF": "00:00:16:199",
+                "MBT": "07:04:000",
+                "ch": 0,
+                "dSecs": 1.2000000000000028,
+                "dTick": 960,
+                "is_meta": false,
+                "msg": "note_on",
+                "note": "D 3",
+                "repr": "   msg | note_on          | ch  : 0          | note: D 3        | vel : 100        | tick:          0 | secs:              0.0",
+                "tick": 12960,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4584,7 +4754,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 12960,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4599,7 +4769,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 13440,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4614,7 +4784,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 13920,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4629,7 +4799,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 14400,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4644,7 +4814,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 14880,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4659,7 +4829,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 15360,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4674,7 +4844,22 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 15840,
-                "trk": 4,
+                "trk": 6,
+                "vel": 100
+            },
+            {
+                "ABST": 20.400000000000002,
+                "HMSF": "00:00:20:400",
+                "MBT": "09:03:000",
+                "ch": 0,
+                "dSecs": 1.1999999999999993,
+                "dTick": 960,
+                "is_meta": false,
+                "msg": "note_on",
+                "note": "D#3",
+                "repr": "   msg | note_on          | ch  : 0          | note: D#3        | vel : 100        | tick:          0 | secs:              0.0",
+                "tick": 16320,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4689,7 +4874,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 16320,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4704,7 +4889,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 16800,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4719,7 +4904,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 17280,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4734,7 +4919,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 17760,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4749,7 +4934,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 18240,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4764,7 +4949,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 18720,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4779,7 +4964,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 19200,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4794,7 +4979,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 19680,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4809,7 +4994,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 20160,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4824,7 +5009,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 20640,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4839,7 +5024,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 21120,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4854,7 +5039,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 21600,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4869,7 +5054,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 22080,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4884,7 +5069,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 22560,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4899,7 +5084,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 23040,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4914,7 +5099,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 23520,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4929,7 +5114,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 24000,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4944,7 +5129,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 24480,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4959,7 +5144,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 24960,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4974,7 +5159,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 25440,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -4989,7 +5174,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 25920,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5004,7 +5189,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 26400,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5019,7 +5204,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 26880,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5034,7 +5219,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 27360,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5049,7 +5234,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 27840,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5064,7 +5249,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 28320,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5079,7 +5264,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 28800,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5094,7 +5279,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 29280,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5109,7 +5294,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 29760,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5124,7 +5309,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 30240,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5139,7 +5324,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 30720,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5154,7 +5339,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 31200,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5169,7 +5354,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 31680,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5184,7 +5369,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 32160,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5199,7 +5384,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 32640,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5214,7 +5399,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 33120,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5229,7 +5414,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 33600,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5244,7 +5429,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 34080,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5259,7 +5444,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 34560,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5274,7 +5459,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 35040,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5289,7 +5474,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 35520,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5304,7 +5489,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 36000,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5319,7 +5504,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 36480,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5334,7 +5519,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 36960,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5349,7 +5534,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 37440,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5364,7 +5549,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 37920,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5379,7 +5564,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 38400,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5394,7 +5579,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 38880,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5409,7 +5594,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 39360,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5424,7 +5609,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 39840,
-                "trk": 4,
+                "trk": 6,
                 "vel": 100
             },
             {
@@ -5435,11 +5620,11 @@
                 "meta": "end_of_track",
                 "repr": "  meta | end_of_track                                                              | tick:          0 | secs:              0.0",
                 "tick": 40320,
-                "trk": 4
+                "trk": 6
             }
         ],
         "track_name": "#mom",
-        "track_no": 4
+        "track_no": 6
     },
     {
         "track_msgs": [
@@ -5452,7 +5637,7 @@
                 "name": "#bro",
                 "repr": "  meta | track_name       | name             | #bro                                | tick:          0 | secs:              0.0",
                 "tick": 0,
-                "trk": 5
+                "trk": 7
             },
             {
                 "ABST": 0.00125,
@@ -5460,10 +5645,10 @@
                 "MBT": "01:01:001",
                 "is_meta": true,
                 "meta": "text",
-                "repr": "  meta | text             | text             | { \"type\": \"create\", \"name\": \"bro\",  | tick:          1 | secs:          0.00125",
-                "text": "{ \"type\": \"create\", \"name\": \"bro\", \"x\": 937, \"y\": 350, \"w\": 256, \"h\": 256 }",
+                "repr": "  meta | text             | text             | { \"cmd\": \"create\", \"type\": \"image\", | tick:          1 | secs:          0.00125",
+                "text": "{ \"cmd\": \"create\", \"type\": \"image\", \"name\": \"bro\", \"x\": 937, \"y\": 350, \"w\": 200, \"h\": 200, \"p\": \"set\" }",
                 "tick": 1,
-                "trk": 5
+                "trk": 7
             },
             {
                 "ABST": 2.4,
@@ -5477,7 +5662,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:       1919 | secs:            2.399",
                 "tick": 1920,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5492,7 +5677,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 2400,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5507,7 +5692,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 2880,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5522,7 +5707,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 3360,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5537,7 +5722,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 3840,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5552,7 +5737,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 4320,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5567,7 +5752,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 4800,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5582,7 +5767,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 5280,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5597,7 +5782,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 5760,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5612,7 +5797,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 6240,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5627,7 +5812,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 6720,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5642,7 +5827,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 7200,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5657,7 +5842,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 7680,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5672,7 +5857,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 8160,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5687,7 +5872,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 8640,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5702,7 +5887,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 9120,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5717,7 +5902,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 9600,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5732,7 +5917,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 10080,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5747,7 +5932,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 10560,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5762,7 +5947,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 11040,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5777,7 +5962,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 11520,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5792,7 +5977,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 12000,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5807,7 +5992,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 12480,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5822,7 +6007,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 12960,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5837,7 +6022,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 13440,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5852,7 +6037,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 13920,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5867,7 +6052,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 14400,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5882,7 +6067,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 14880,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5897,7 +6082,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 15360,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5912,7 +6097,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 15840,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5927,7 +6112,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 16320,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5942,7 +6127,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 16800,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5957,7 +6142,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 17280,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5972,7 +6157,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 17760,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -5987,7 +6172,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 18240,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6002,7 +6187,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 18720,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6017,7 +6202,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 19200,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6032,7 +6217,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 19680,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6047,7 +6232,22 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 20160,
-                "trk": 5,
+                "trk": 7,
+                "vel": 100
+            },
+            {
+                "ABST": 25.8,
+                "HMSF": "00:00:25:800",
+                "MBT": "11:04:000",
+                "ch": 0,
+                "dSecs": 1.1999999999999993,
+                "dTick": 960,
+                "is_meta": false,
+                "msg": "note_on",
+                "note": "D 3",
+                "repr": "   msg | note_on          | ch  : 0          | note: D 3        | vel : 100        | tick:          0 | secs:              0.0",
+                "tick": 20640,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6062,7 +6262,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 20640,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6077,7 +6277,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 21120,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6092,7 +6292,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 21600,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6107,7 +6307,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 22080,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6122,7 +6322,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 22560,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6137,7 +6337,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 23040,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6152,7 +6352,22 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 23520,
-                "trk": 5,
+                "trk": 7,
+                "vel": 100
+            },
+            {
+                "ABST": 30.0,
+                "HMSF": "00:00:30:000",
+                "MBT": "13:03:000",
+                "ch": 0,
+                "dSecs": 1.1999999999999993,
+                "dTick": 960,
+                "is_meta": false,
+                "msg": "note_on",
+                "note": "D#3",
+                "repr": "   msg | note_on          | ch  : 0          | note: D#3        | vel : 100        | tick:          0 | secs:              0.0",
+                "tick": 24000,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6167,7 +6382,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 24000,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6182,7 +6397,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 24480,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6197,7 +6412,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 24960,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6212,7 +6427,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 25440,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6227,7 +6442,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 25920,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6242,7 +6457,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 26400,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6257,7 +6472,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 26880,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6272,7 +6487,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 27360,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6287,7 +6502,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 27840,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6302,7 +6517,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 28320,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6317,7 +6532,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 28800,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6332,7 +6547,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 29280,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6347,7 +6562,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 29760,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6362,7 +6577,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 30240,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6377,7 +6592,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 30720,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6392,7 +6607,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 31200,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6407,7 +6622,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 31680,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6422,7 +6637,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 32160,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6437,7 +6652,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 32640,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6452,7 +6667,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 33120,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6467,7 +6682,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 33600,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6482,7 +6697,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 34080,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6497,7 +6712,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 34560,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6512,7 +6727,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 35040,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6527,7 +6742,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 35520,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6542,7 +6757,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 36000,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6557,7 +6772,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 36480,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6572,7 +6787,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 36960,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6587,7 +6802,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 37440,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6602,7 +6817,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 37920,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6617,7 +6832,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 38400,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6632,7 +6847,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 38880,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6647,7 +6862,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 39360,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6662,7 +6877,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 39840,
-                "trk": 5,
+                "trk": 7,
                 "vel": 100
             },
             {
@@ -6673,11 +6888,11 @@
                 "meta": "end_of_track",
                 "repr": "  meta | end_of_track                                                              | tick:          0 | secs:              0.0",
                 "tick": 40320,
-                "trk": 5
+                "trk": 7
             }
         ],
         "track_name": "#bro",
-        "track_no": 5
+        "track_no": 7
     },
     {
         "track_msgs": [
@@ -6690,7 +6905,7 @@
                 "name": "#sis",
                 "repr": "  meta | track_name       | name             | #sis                                | tick:          0 | secs:              0.0",
                 "tick": 0,
-                "trk": 6
+                "trk": 8
             },
             {
                 "ABST": 0.00125,
@@ -6698,10 +6913,10 @@
                 "MBT": "01:01:001",
                 "is_meta": true,
                 "meta": "text",
-                "repr": "  meta | text             | text             | { \"type\": \"create\", \"name\": \"sis\",  | tick:          1 | secs:          0.00125",
-                "text": "{ \"type\": \"create\", \"name\": \"sis\", \"x\": 1318, \"y\": 350, \"w\": 256, \"h\": 256 }",
+                "repr": "  meta | text             | text             | { \"cmd\": \"create\", \"type\": \"image\", | tick:          1 | secs:          0.00125",
+                "text": "{ \"cmd\": \"create\", \"type\": \"image\",  \"name\": \"sis\", \"x\": 1318, \"y\": 350, \"w\": 200, \"h\": 200, \"p\": \"set\" }",
                 "tick": 1,
-                "trk": 6
+                "trk": 8
             },
             {
                 "ABST": 2.4,
@@ -6715,7 +6930,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:       1919 | secs:            2.399",
                 "tick": 1920,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -6730,7 +6945,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 2400,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -6745,7 +6960,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 2880,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -6760,7 +6975,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 3360,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -6775,7 +6990,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 3840,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -6790,7 +7005,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 4320,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -6805,7 +7020,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 4800,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -6820,7 +7035,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 5280,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -6835,7 +7050,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 5760,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -6850,7 +7065,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 6240,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -6865,7 +7080,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 6720,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -6880,7 +7095,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 7200,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -6895,7 +7110,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 7680,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -6910,7 +7125,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 8160,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -6925,7 +7140,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 8640,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -6940,7 +7155,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 9120,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -6955,7 +7170,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 9600,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -6970,7 +7185,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 10080,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -6985,7 +7200,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 10560,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7000,7 +7215,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 11040,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7015,7 +7230,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 11520,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7030,7 +7245,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 12000,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7045,7 +7260,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 12480,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7060,7 +7275,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 12960,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7075,7 +7290,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 13440,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7090,7 +7305,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 13920,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7105,7 +7320,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 14400,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7120,7 +7335,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 14880,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7135,7 +7350,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 15360,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7150,7 +7365,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 15840,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7165,7 +7380,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 16320,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7180,7 +7395,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 16800,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7195,7 +7410,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 17280,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7210,7 +7425,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 17760,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7225,7 +7440,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 18240,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7240,7 +7455,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 18720,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7255,7 +7470,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 19200,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7270,7 +7485,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 19680,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7285,7 +7500,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 20160,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7300,7 +7515,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 20640,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7315,7 +7530,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 21120,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7330,7 +7545,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 21600,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7345,7 +7560,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 22080,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7360,7 +7575,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 22560,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7375,7 +7590,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 23040,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7390,7 +7605,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 23520,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7405,7 +7620,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 24000,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7420,7 +7635,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 24480,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7435,7 +7650,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 24960,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7450,7 +7665,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 25440,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7465,7 +7680,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 25920,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7480,7 +7695,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 26400,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7495,7 +7710,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 26880,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7510,7 +7725,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 27360,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7525,7 +7740,22 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 27840,
-                "trk": 6,
+                "trk": 8,
+                "vel": 100
+            },
+            {
+                "ABST": 35.4,
+                "HMSF": "00:00:35:399",
+                "MBT": "15:04:000",
+                "ch": 0,
+                "dSecs": 1.2000000000000028,
+                "dTick": 960,
+                "is_meta": false,
+                "msg": "note_on",
+                "note": "D 3",
+                "repr": "   msg | note_on          | ch  : 0          | note: D 3        | vel : 100        | tick:          0 | secs:              0.0",
+                "tick": 28320,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7540,7 +7770,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 28320,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7555,7 +7785,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 28800,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7570,7 +7800,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 29280,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7585,7 +7815,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 29760,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7600,7 +7830,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 30240,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7615,7 +7845,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 30720,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7630,7 +7860,22 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 31200,
-                "trk": 6,
+                "trk": 8,
+                "vel": 100
+            },
+            {
+                "ABST": 39.6,
+                "HMSF": "00:00:39:600",
+                "MBT": "17:03:000",
+                "ch": 0,
+                "dSecs": 1.2000000000000028,
+                "dTick": 960,
+                "is_meta": false,
+                "msg": "note_on",
+                "note": "D#3",
+                "repr": "   msg | note_on          | ch  : 0          | note: D#3        | vel : 100        | tick:          0 | secs:              0.0",
+                "tick": 31680,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7645,7 +7890,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 31680,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7660,7 +7905,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 32160,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7675,7 +7920,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 32640,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7690,7 +7935,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 33120,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7705,7 +7950,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 33600,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7720,7 +7965,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 34080,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7735,7 +7980,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 34560,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7750,7 +7995,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 35040,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7765,7 +8010,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 35520,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7780,7 +8025,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 36000,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7795,7 +8040,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 36480,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7810,7 +8055,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 36960,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7825,7 +8070,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 37440,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7840,7 +8085,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 37920,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7855,7 +8100,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 38400,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7870,7 +8115,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 38880,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7885,7 +8130,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 39360,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7900,7 +8145,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 39840,
-                "trk": 6,
+                "trk": 8,
                 "vel": 100
             },
             {
@@ -7911,11 +8156,11 @@
                 "meta": "end_of_track",
                 "repr": "  meta | end_of_track                                                              | tick:          0 | secs:              0.0",
                 "tick": 40320,
-                "trk": 6
+                "trk": 8
             }
         ],
         "track_name": "#sis",
-        "track_no": 6
+        "track_no": 8
     },
     {
         "track_msgs": [
@@ -7928,7 +8173,7 @@
                 "name": "#beb",
                 "repr": "  meta | track_name       | name             | #beb                                | tick:          0 | secs:              0.0",
                 "tick": 0,
-                "trk": 7
+                "trk": 9
             },
             {
                 "ABST": 0.00125,
@@ -7936,10 +8181,10 @@
                 "MBT": "01:01:001",
                 "is_meta": true,
                 "meta": "text",
-                "repr": "  meta | text             | text             | { \"type\": \"create\", \"name\": \"beb\",  | tick:          1 | secs:          0.00125",
-                "text": "{ \"type\": \"create\", \"name\": \"beb\", \"x\": 1699, \"y\": 350, \"w\": 256, \"h\": 256 }",
+                "repr": "  meta | text             | text             | { \"cmd\": \"create\", \"type\": \"image\", | tick:          1 | secs:          0.00125",
+                "text": "{ \"cmd\": \"create\", \"type\": \"image\", \"name\": \"beb\", \"x\": 1699, \"y\": 350, \"w\": 200, \"h\": 200, \"p\": \"set\" }",
                 "tick": 1,
-                "trk": 7
+                "trk": 9
             },
             {
                 "ABST": 2.4,
@@ -7953,7 +8198,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:       1919 | secs:            2.399",
                 "tick": 1920,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -7968,7 +8213,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 2400,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -7983,7 +8228,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 2880,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -7998,7 +8243,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 3360,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8013,7 +8258,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 3840,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8028,7 +8273,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 4320,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8043,7 +8288,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 4800,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8058,7 +8303,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 5280,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8073,7 +8318,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 5760,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8088,7 +8333,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 6240,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8103,7 +8348,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 6720,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8118,7 +8363,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 7200,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8133,7 +8378,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 7680,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8148,7 +8393,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 8160,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8163,7 +8408,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 8640,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8178,7 +8423,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 9120,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8193,7 +8438,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 9600,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8208,7 +8453,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 10080,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8223,7 +8468,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 10560,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8238,7 +8483,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 11040,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8253,7 +8498,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 11520,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8268,7 +8513,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 12000,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8283,7 +8528,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 12480,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8298,7 +8543,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 12960,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8313,7 +8558,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 13440,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8328,7 +8573,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 13920,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8343,7 +8588,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 14400,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8358,7 +8603,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 14880,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8373,7 +8618,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 15360,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8388,7 +8633,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 15840,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8403,7 +8648,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 16320,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8418,7 +8663,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 16800,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8433,7 +8678,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 17280,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8448,7 +8693,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 17760,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8463,7 +8708,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 18240,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8478,7 +8723,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 18720,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8493,7 +8738,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 19200,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8508,7 +8753,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 19680,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8523,7 +8768,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 20160,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8538,7 +8783,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 20640,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8553,7 +8798,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 21120,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8568,7 +8813,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 21600,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8583,7 +8828,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 22080,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8598,7 +8843,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 22560,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8613,7 +8858,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 23040,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8628,7 +8873,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 23520,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8643,7 +8888,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 24000,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8658,7 +8903,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 24480,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8673,7 +8918,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 24960,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8688,7 +8933,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 25440,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8703,7 +8948,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 25920,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8718,7 +8963,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 26400,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8733,7 +8978,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 26880,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8748,7 +8993,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 27360,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8763,7 +9008,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 27840,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8778,7 +9023,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 28320,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8793,7 +9038,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 28800,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8808,7 +9053,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 29280,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8823,7 +9068,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 29760,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8838,7 +9083,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 30240,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8853,7 +9098,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 30720,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8868,7 +9113,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 31200,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8883,7 +9128,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 31680,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8898,7 +9143,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 32160,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8913,7 +9158,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 32640,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8928,7 +9173,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 33120,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8943,7 +9188,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 33600,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8958,7 +9203,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 34080,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8973,7 +9218,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 34560,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -8988,7 +9233,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 35040,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -9003,7 +9248,22 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 35520,
-                "trk": 7,
+                "trk": 9,
+                "vel": 100
+            },
+            {
+                "ABST": 45.0,
+                "HMSF": "00:00:45:000",
+                "MBT": "19:04:000",
+                "ch": 0,
+                "dSecs": 1.2000000000000028,
+                "dTick": 960,
+                "is_meta": false,
+                "msg": "note_on",
+                "note": "D 3",
+                "repr": "   msg | note_on          | ch  : 0          | note: D 3        | vel : 100        | tick:          0 | secs:              0.0",
+                "tick": 36000,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -9018,7 +9278,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 36000,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -9033,7 +9293,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 36480,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -9048,7 +9308,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 36960,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -9063,7 +9323,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 37440,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -9078,7 +9338,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 37920,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -9093,7 +9353,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 38400,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -9108,7 +9368,22 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 38880,
-                "trk": 7,
+                "trk": 9,
+                "vel": 100
+            },
+            {
+                "ABST": 49.2,
+                "HMSF": "00:00:49:200",
+                "MBT": "21:03:000",
+                "ch": 0,
+                "dSecs": 1.1999999999999957,
+                "dTick": 960,
+                "is_meta": false,
+                "msg": "note_on",
+                "note": "D#3",
+                "repr": "   msg | note_on          | ch  : 0          | note: D#3        | vel : 100        | tick:          0 | secs:              0.0",
+                "tick": 39360,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -9123,7 +9398,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 39360,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -9138,7 +9413,7 @@
                 "note": "C 3",
                 "repr": "   msg | note_on          | ch  : 0          | note: C 3        | vel : 100        | tick:          0 | secs:              0.0",
                 "tick": 39840,
-                "trk": 7,
+                "trk": 9,
                 "vel": 100
             },
             {
@@ -9149,10 +9424,10 @@
                 "meta": "end_of_track",
                 "repr": "  meta | end_of_track                                                              | tick:          0 | secs:              0.0",
                 "tick": 40320,
-                "trk": 7
+                "trk": 9
             }
         ],
         "track_name": "#beb",
-        "track_no": 7
+        "track_no": 9
     }
 ]

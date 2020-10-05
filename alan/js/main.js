@@ -1,20 +1,20 @@
-import { msToHMS } from './functions/functions.js';
-import { Widget } from './classes/widget.js'
-import { choreoMidi } from '../midi/ff_type_002.js';
+import { msToHMS } from './helpers/midiHelpers.js';
+import { Scene } from './classes/scene.js';
+import { sequence } from '../sequences/ff_type_002.js';
 
 var hTimecode;
 
 $(document).ready(function() {
-    init() // env    
-    timeline.pause() // timeline pause
-    // var widgets = Widget.widgetsFromList(['dad', 'mom', 'bro', 'sis', 'beb']);
-    var widgets = Widget.widgetsFromMidi(choreoMidi);
-    Widget.attach(widgets, 'scene', timeline);
+    init(); // env    
+    var scene = new Scene(sequence);
+    timeline.add(scene.timeline, 0);
+    timeline.pause();
     
     $("#play").click(function() {
       var timeBegin = new Date()
       if(hTimecode) clearInterval(hTimecode) // clean hTimecode
       
+      scene.timeline.restart();
       timeline.restart() // run timeline
       hTimecode = setInterval(function() {
         var abst = (new Date()).getTime() - timeBegin.getTime()
