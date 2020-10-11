@@ -1,6 +1,6 @@
 import { msToHMS } from './helpers/midiHelpers.js';
 import { Scene } from './classes/scene.js';
-import { sequence } from '../sequences/ff_type_002.js';
+import { sequence } from '../sequences/seq.js';
 
 var hTimecode;
 

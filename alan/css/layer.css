@@ -1,7 +1,7 @@
 .layer {
     position: absolute;  
   }
-/* .layer::after {
+.layer::after {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -24,7 +24,7 @@
 .C {    
   outline: dotted 3px red;
   z-index: -300;
-} */
+}
 .C > img {
   filter: drop-shadow(rgb(0, 0, 0) 5px 5px 4px);
 }
