@@ -1,0 +1,14 @@
+.layer::after {
+  outline: solid 3px;
+  outline-color: inherit;
+}
+
+.P {
+  outline: solid 3px black;
+}
+.A {
+  outline: dashed 3px blue;
+}
+.C {    
+  outline: dotted 3px red;
+}

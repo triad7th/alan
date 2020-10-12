@@ -2,7 +2,7 @@ import { Layer } from './layer.js'
 import * as Parse from '../helpers/parseHelpers.js'
 
 export class Widget {
-  constructor({type, name, x, y, w, h, content, sequence, parent}) {
+  constructor({type, name, x, y, w, h, a, content, sequence, parent, aw, ah, choreo, act}) {
     this.type = type;
     this.name = name;
     this.content = content;
@@ -13,6 +13,8 @@ export class Widget {
     this.children = [];
     this.id = this.parent ? `${this.parent.id}-${this.name}` : this.name;
     this.level = this.parent ? this.parent.level + 1 : 1;
+    this.choreo = choreo;
+    this.act = act;
     
     // pos cluster
     //
@@ -33,7 +35,7 @@ export class Widget {
     // width: any px
     // height: any px
     var cluster = this.getCluster('A');
-    cluster[0].setLayer({ name: 'A1', x: -0.5 * w, y: -0.5 * h, w: w, h: h, zIndex: this.getZIndex(-200)});
+    cluster[0].setLayer({ name: 'A1', x: -0.5 * w, y: -0.5 * h, a: a, w: aw ? aw : w, h: ah ? ah: h, zIndex: this.getZIndex(-200)});
     this.layers = [...this.layers, ...cluster];
     this.getLayer('P1').child = this.getLayer('A1'); // connect pos cluster
 
@@ -69,6 +71,9 @@ export class Widget {
   getZIndex(idx) {
     return -500000 + (this.level * 1000) + idx;
   }
+  getContentId() {
+    return `${this.id}${this.lastLayer.name}?content`
+  }
 
   // setter
   set x(x) { this.getLayer('P1').x = x; }
@@ -86,7 +91,7 @@ export class Widget {
     if(this.children) {
       for(const child of this.children) {
         if(child.name === name) return child;
-        foundChild = child.findChild(name);
+        const foundChild = child.findChild(name);
         if(foundChild) return foundChild;
       }
     }
@@ -107,6 +112,12 @@ export class Widget {
     if(this.name === name) return this;
     else return this.findChild(name);
   }
+  absPos(to='scene', x, y) {
+    if(this.name === to) return {x: x ? x : this.x, y: y ? y : this.y};
+    else
+      if(this.parent) return this.parent.absPos(to, x ? x + this.x : this.x, y ? y + this.y : this.y);
+      else return {x: x, y: y};
+  }
 
   // parse
   parseDom() {    
@@ -121,6 +132,7 @@ export class Widget {
       }
     }
     if(this.content) {
+      this.content.setAttribute('id', this.getContentId())
       this.lastLayer.dom.append(this.content);
     }
     if(this.children) {
@@ -130,22 +142,27 @@ export class Widget {
     }    
     return this.getLayer('P1').dom;
   }
-  parseTimeline() {    
-    for(const msg of this.sequence) {
-      // meta
-      if(msg.is_meta) {
-        switch(msg.meta) {
-          case 'text':
-            Parse.text(this, msg);
-        }
-      // note
-      } else {
-        switch(msg.msg) {
-          case 'note_on':
-            Parse.note(this, msg);
-        }
-      }				
+  parseTimeline() {
+    if(this.sequence) {
+      for(const msg of this.sequence) {
+        // meta
+        if(msg.is_meta) {
+          switch(msg.meta) {
+            case 'text':
+              Parse.text(this, msg);
+          }
+        // note
+        } else {
+          switch(msg.msg) {
+            case 'note_on':
+              Parse.note(this, msg);
+          }
+        }				
+      }
     }
+    this.tl.add(this.getLayer('P1').tl, 0);
+    this.tl.add(this.getLayer('A1').tl, 0);
+    this.tl.add(this.getLayer('C1').tl, 0);
     if(this.children) {
       for(const child of this.children) {
         child.parseTimeline();

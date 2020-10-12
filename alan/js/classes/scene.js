@@ -1,14 +1,15 @@
 import { Widget } from './widget.js'
 
 export class Scene {
-  constructor(sequence) {
+  constructor(set, sequence) {
     this.dom = document.getElementById('scene');
     this.name = 'scene';
+    this.set = set;
     this.sequence = sequence;
     this.timeline = gsap.timeline();
     this.widgets = {};
 
-    this.loadWidgets(); // load widgets
+    this.load(set); // load widgets
     for(const wgName in this.widgets) {
       this.dom.append(this.widgets[wgName].parseDom());      
       this.timeline.add(this.widgets[wgName].parseTimeline(), 0);
@@ -16,27 +17,39 @@ export class Scene {
   }
 
   // load widgets
-  loadWidgets() {
-    // for all tracks in the midi
+  load(set) {    
+    this.getWidget(set);
+    for(const child of set.children) {      
+      this.load(child);
+    }
+  }  
+  getWidget(set) {
+    var info = set.info;    
+    const parent = this.findWidget(info.parent);
+
+    info['parent'] = parent;
+    info['sequence'] = this.findSequence(info.name);
+    switch(info.type) {
+      case 'image': {
+        info['content'] = Scene.conFromImg(info);
+      }
+      break;
+      case 'container': {
+        
+      }
+      break;
+    }
+    if(parent) return parent.addChild(new Widget(info));
+      else return this.addChild(set.name, new Widget(info));
+  }
+  // helpers    
+  findSequence(name) {
     for(const track of this.sequence) {
-      if(Scene.isWidget(track)) {
-        const name = Scene.getName(track);
-        // for all msgs in the track
-        for(const msg of track.track_msgs) {
-          // meta
-          if(msg.is_meta) {
-            switch(msg.meta) {
-              case 'text':
-                this.parseText(name, msg, track.track_msgs);
-            }
-          }
-        }    
+      if(track.track_name === `#${name}`) {
+        return track.track_msgs;
       }
     }
-    return this.widgets;
   }
-
-  // helpers
   findWidget(name) {
     if(this.widgets) {
       for(const wgName in this.widgets) {
@@ -50,63 +63,25 @@ export class Scene {
     this.widgets[name] = widget;
     return this.widgets[name];
   }
-  parseText(name, msg, sequence) {
-    const meta = JSON.parse(msg.text);
-    var args;
-    switch(meta.cmd) {
-      case 'update': {
-        const widget = this.findWidget(name);
-        switch(meta.type) {
-          case 'content': {
-            if(widget.content) {
-              widget.content.style.left = meta.x;
-              widget.content.style.top = meta.y;
-              widget.content.style.width = meta.w;
-              widget.content.style.height = meta.h;
-              break;
-            }
-          }
-          default:
-            break;
-        }
-        break;
-      }
-      case 'create': {
-        const parent = this.findWidget(meta['p']);
-        args = {
-          ...meta,
-          sequence: sequence,
-          parent: parent
-        }          
-        switch(meta.type) {
-          case 'image':
-            if(meta.src) {
-              args['content'] = Scene.conFromImg(`./images/${meta.src}`);
-            } else {
-              args['content'] = Scene.conFromImg(`./images/${name}.png`);
-            }            
-            break;
-          case 'container':
-            break;
-          default:
-            return false;
-        } 
-        if(parent) {
-          return parent.addChild(new Widget(args));
-        } else {
-          return this.addChild(name, new Widget(args));
-        }                  
-      }
-      default:
-        return false;
-    }
-  }
   static isWidget(track) { if(track.track_name[0] === '#') return true; else false; }
   static getName(track) { return track.track_name.slice(1); }
-  static conFromImg(fn) {
+  static conFromImg(info) {
     // create a simple img elem
     const img = document.createElement('img');
-    img.setAttribute('src', fn);
+    img.id = 
+    if(info.src) img.setAttribute('src', info.src);
+    if(info.class) img.classList.add(info.class);
+    else {
+      img.classList.add('fit');
+      img.classList.add('shadow');
+    }
+    if(info.style) {
+      img.style.top = img.style.top || `${info.style.top}px`;
+      img.style.left = img.style.left || `${info.style.left}px`;
+      img.style.width = img.style.width || `${info.style.width}px`;
+      img.style.height = img.style.height || `${info.style.height}px`;
+      img.style.filter = img.style.filter || info.style.filter;
+    }
     return img;
   }
 }

@@ -8,24 +8,32 @@
   width: 10px;
   height: 10px;
   content: close-quote;
-  outline: solid 3px;
-  outline-color: inherit;
   transform: translate(-50%, -50%);    
 }
 
 .P {
-  outline: solid 3px black;
   z-index: -100;
 }
 .A {
-  outline: dashed 3px blue;
   z-index: -200;
 }
 .C {    
-  outline: dotted 3px red;
   z-index: -300;
 }
-.C > img {
+/* .C > img {
+  filter: drop-shadow(rgb(0, 0, 0) 5px 5px 4px);
+} */
+
+.fit {
+  width: 100%;
+  height: 100%;  
+}
+
+.shadow {
   filter: drop-shadow(rgb(0, 0, 0) 5px 5px 4px);
 }
 
+.overflow {
+  width: initial;
+  height: initial;
+}

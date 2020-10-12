@@ -7,39 +7,61 @@ function text(wg, msg) {
 }
 const dGap = 0.001 // tiny time gap between choreos 
 function note(wg, msg) {
-	switch(msg.note) {
-		case "C 3": {
-			// Bounce
-			const id = wg.getLayer('C1').id;
-			wg.tl
-				.to(id, {scale: 1.05, duration: 0.001, ease: "power4.out"}, msg.ABST)
-				.to(id, {scale: 1, duration: msg.dSecs * 0.5 - dGap, ease: "back.out"});
-			break;			
+	if(wg.choreo) {
+		const choreo = wg.choreo[msg.note];
+		if(choreo) {
+			switch(choreo.type) {
+				case "focus": {
+					const id = wg.getLayer('C1').id;
+					var tl = wg.getLayer('C1').tl;
+					tl.to(id, {x: choreo.x, y: choreo.y, scale: choreo.scale, rotate: choreo.rotate, duration: msg.dSecs - dGap, ease: "power2.out"}, msg.ABST);
+				}
+				break;
+			}
 		}		
-		case "D 3": {
-			// Zoom In
-			const wgSet = wg.findWidgetGlobal('set');
-			const id = wgSet.getLayer('P1').id;
-			const scale = 3;
-			const dx = parseFloat(wgSet.x) - parseFloat(wg.x), dy = parseFloat(wgSet.y) - parseFloat(wg.y);
-			wgSet.tl
-				.to(id, {x: `+=${dx * scale}px`, y: `+=${dy * scale}px`, scale: scale, duration: msg.dSecs - dGap, ease: "power2.out"}, msg.ABST)
-			break;
-		}		
-		case "D#3": {
-			// Zoom In
-			const wgSet = wg.findWidgetGlobal('set');
-			const id = wgSet.getLayer('P1').id;
-			const scale = 3;
-			const dx = wgSet.x - wg.x, dy = wgSet.y - wg.y;
-			wgSet.tl
-				.to(id, {x: `-=${dx * scale}px`, y: `-=${dy * scale}px`, scale: 1, duration: msg.dSecs - dGap, ease: "power2.out"}, msg.ABST);
-			break;
+	} else
+	{
+		switch(msg.note) {
+			case "C 3": {
+				// Bounce
+				const id = wg.getLayer('C1').id;
+				var tl = wg.getLayer('C1').tl;
+				tl
+					.to(id, {scale: 1.2, duration: 0.001, ease: "power4.out"}, msg.ABST)
+					.to(id, {scale: 1, duration: msg.dSecs * 0.5 - dGap, ease: "back.out"});
+				break;			
+			}
+			case "C#3": {
+				// Bounce Little
+				const id = wg.getLayer('C1').id;
+				var tl = wg.getLayer('C1').tl;
+				tl
+					.to(id, {scale: 1.05, duration: 0.001, ease: "power4.out"}, msg.ABST)
+					.to(id, {scale: 1, duration: msg.dSecs * 0.5 - dGap, ease: "back.out"});
+				break;			
+			}
+			case "E 3": {
+				// Shake
+				const id = wg.getLayer('A1').id;
+				var tl = wg.getLayer('A1').tl;
+				tl
+					.to(id, {rotate: -15, duration: msg.dSecs * 0.25, ease: "power4.out"}, msg.ABST)
+					.to(id, {rotate: 0, duration: msg.dSecs * 0.25, ease: "power4.in"})
+					.to(id, {rotate: 15, duration: msg.dSecs * 0.25, ease: "power4.out"})
+					.to(id, {rotate: 0, duration: msg.dSecs * 0.25 - dGap, ease: "power4.in"});
+				break;			
+			}
+			case "F 4": {
+				// Blink Eye
+				const id = "leye";
+				var tl = wg.getLayer('C1').tl;
+				tl.to(id, {duration: msg.dSecs, attr: { d: wg.act.close.d }, ease: "power2.in"}, msg.ABST);
+			}
+			
+			default:
+				break;
 		}
-		
-		default:
-			break;
-	}
+	}	
 }
 
 export { text, note };

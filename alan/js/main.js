@@ -1,12 +1,13 @@
 import { msToHMS } from './helpers/midiHelpers.js';
 import { Scene } from './classes/scene.js';
 import { sequence } from '../sequences/seq.js';
+import { set } from '../sequences/set.js';
 
 var hTimecode;
 
 $(document).ready(function() {
     init(); // env    
-    var scene = new Scene(sequence);
+    var scene = new Scene(set, sequence);
     timeline.add(scene.timeline, 0);
     timeline.pause();
     

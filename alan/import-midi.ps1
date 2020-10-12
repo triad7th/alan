@@ -11,4 +11,4 @@ $item = gci $item
 $midi = & 'C:\repos\pyprone\unittest\test_midiconv.py' $item.FullName
 $startLine = ($midi | sls 'analyze...').LineNumber
 $js = & {'export const sequence ='; $midi[$startLine..($midi.Length - 1)]}
-$js | Out-File '.\sequences\seq.js' -Encoding utf8 -ForceB
+$js | Out-File '.\sequences\seq.js' -Encoding utf8 -Force
