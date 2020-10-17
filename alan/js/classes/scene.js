@@ -38,6 +38,9 @@ export class Scene {
         
       }
       break;
+      case 'svg': {
+        info['content'] = Scene.conFromSvg(info);
+      }
     }
     if(parent) return parent.addChild(new Widget(info));
       else return this.addChild(set.name, new Widget(info));
@@ -65,23 +68,33 @@ export class Scene {
   }
   static isWidget(track) { if(track.track_name[0] === '#') return true; else false; }
   static getName(track) { return track.track_name.slice(1); }
+  static conDecoration(info, dom) {
+    if(info.class) dom.classList.add(info.class);
+    else {
+      dom.classList.add('fit');
+      dom.classList.add('shadow');
+    }
+    if(info.style) {
+      dom.style.top = dom.style.top || `${info.style.top}px`;
+      dom.style.left = dom.style.left || `${info.style.left}px`;
+      dom.style.width = dom.style.width || `${info.style.width}px`;
+      dom.style.height = dom.style.height || `${info.style.height}px`;
+      dom.style.filter = dom.style.filter || info.style.filter;
+    }
+    return dom;
+  }
   static conFromImg(info) {
     // create a simple img elem
     const img = document.createElement('img');
-    img.id = 
     if(info.src) img.setAttribute('src', info.src);
-    if(info.class) img.classList.add(info.class);
-    else {
-      img.classList.add('fit');
-      img.classList.add('shadow');
-    }
-    if(info.style) {
-      img.style.top = img.style.top || `${info.style.top}px`;
-      img.style.left = img.style.left || `${info.style.left}px`;
-      img.style.width = img.style.width || `${info.style.width}px`;
-      img.style.height = img.style.height || `${info.style.height}px`;
-      img.style.filter = img.style.filter || info.style.filter;
-    }
-    return img;
+
+    return this.conDecoration(info, img);
+  }
+  static conFromSvg(info) {
+    // create a dom elem from svg
+    const div = document.createElement('div');
+    div.innerHTML = info.src.trim();
+    const svg = div.firstChild;
+    return this.conDecoration(info, svg);
   }
 }

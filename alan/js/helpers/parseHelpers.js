@@ -51,11 +51,17 @@ function note(wg, msg) {
 					.to(id, {rotate: 0, duration: msg.dSecs * 0.25 - dGap, ease: "power4.in"});
 				break;			
 			}
-			case "F 4": {
+			case "C 4": {
 				// Blink Eye
-				const id = "leye";
+				const id = wg.getLayer('C1').id;
 				var tl = wg.getLayer('C1').tl;
-				tl.to(id, {duration: msg.dSecs, attr: { d: wg.act.close.d }, ease: "power2.in"}, msg.ABST);
+				tl
+					.to(`${id} > svg > path.svgmorph`, {duration: 0.1, attr: { d: wg.act.close.d }, ease: "power4.out"}, msg.ABST)
+					.to(`${id} > svg > path.svgmorph`, {duration: msg.dSecs, attr: { d: wg.act.open.d }, ease: "power4.out"});
+
+				tl
+					.to(`${id} > svg > circle.iris`, {duration: 0.1, opacity: 0, ease: "power4.out"}, msg.ABST)
+					.to(`${id} > svg > circle.iris`, {duration: msg.dSecs / 3, opacity: 1, ease: "power4.in"}, msg.ABST + 0.1);
 			}
 			
 			default:

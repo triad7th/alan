@@ -40,6 +40,11 @@ function info($item, $parent){
     'image' {
       if($info.src){ $info.src = url $item $info.src }
     }
+    'svg' {
+      if($info.src){
+        $info.src = gc "$($item.FullName)\$($info.src)" | Out-String
+      }
+    }
     default {}
   }
   return ($info)
