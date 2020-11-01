@@ -1,0 +1,16 @@
+#palette {
+  left: 1024px;
+  display: block;
+  position: absolute;
+  width: 1024px;
+  height: 324px;  
+  background-color: gainsboro;
+  overflow: hidden;  
+}
+.palette-item {
+  display: inline;
+  position: relative;    
+}
+#palette > svg {
+  outline: 1px dotted darkblue;
+}

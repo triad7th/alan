@@ -1,0 +1,73 @@
+#canvas {
+  display: block;
+  position: absolute;
+  width: 1024px;
+  height: 1024px;  
+  background-color: grey;
+  overflow: hidden;  
+}
+#pos {
+  display: inherit;
+  position: inherit;
+  left: 512px;
+  top: 512px;
+}
+#pos > .canvas-item {
+  display: block;
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  outline: dashed;
+  left: -400px;
+  top: -400px;
+}
+#cursor-info {
+  display: block;
+  position: absolute;
+  left: 10px;
+  top: 1030px;
+  font-family: consolas;
+}
+#brush-info {
+  display: block;
+  position: absolute;
+  left: 10px;
+  top: 1050px;
+  font-family: consolas;
+}
+#memory-info {
+  display: block;
+  position: absolute;
+  left: 10px;
+  top: 1070px;
+  font-family: consolas;
+}
+#bg-info {
+  display: block;
+  position: absolute;
+  left: 10px;
+  top: 1090px;
+  font-family: consolas;
+}
+#viewbox-info {
+  display: block;
+  position: absolute;
+  left: 10px;
+  top: 1110px;
+  font-family: consolas;
+}
+.brush-item {
+  display: inherit;
+  position: inherit;
+  left: -400px;
+  top: -400px;
+}
+.brush-item.picked {
+  outline: 5px dotted palevioletred;
+}
+.canvas-item > .picked {
+  outline: 2px dotted palegoldenrod;
+}
+.canvas-item > g > .picked {
+  outline: 2px dotted palegoldenrod;
+}
