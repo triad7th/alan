@@ -6,6 +6,7 @@ export function reload(timeline) {
     child.kill();
   }
   timeline.clear();
-  timeline.add(choreo.eyeblink(svgs.eye, 0.6), 0);
+  timeline.add(choreo.eyeblink(svgs.eyel, 0.6), 0);
+  timeline.add(choreo.eyeblink(svgs.eyer, 0.6), 0);
   timeline.add(choreo.eyeblinkbg(svgs.eyebg, 0.6), 0);
 }

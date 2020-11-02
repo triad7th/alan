@@ -7,7 +7,7 @@ import * as md from './md.js'
  * load palette
  */
 export function load({canvas, palette, timeline}) {
-  palette.items = [factory.svg(svgs.eye), factory.svg(svgs.eyebg)];
+  palette.items = [factory.svg(svgs.eyel), factory.svg(svgs.eyer)];
   for(const item of palette.items) {
     palette.dom.append(item);
   }

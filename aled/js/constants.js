@@ -7,7 +7,7 @@ export const canvas = {
     isPickedBg: false,
     pickedElem: undefined,
     pickedBg: undefined,
-    memory: {w: undefined, h: undefined, c: undefined}},
+    memory: {x: undefined, y: undefined, w: undefined, h: undefined, c: undefined}},
   cursor:  {x: undefined, y: undefined},
   viewBox: undefined
 }

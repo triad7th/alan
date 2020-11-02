@@ -63,36 +63,92 @@ function keydown({brush, viewBox}) {
       const elem = brush.pickedElem;
       const bg = brush.pickedBg;
       const vb = viewBox;
-      switch(evt.key){
-        case 'g': {
-          if(evt.altKey) {
+      switch(evt.code){
+        case 'KeyS': {
+          if(evt.shiftKey) {
             if(vb) {
-              vb.width *= 1.1;
-              vb.height *= 1.1;
+              vb.width *= 1.05;
+              vb.height *= 1.05;
             }
           } else {
             if(elem) {
-              elem.width.baseVal.value *= 0.9;
-              elem.height.baseVal.value *= 0.9;
+              elem.width.baseVal.value *= 0.95;
+              elem.height.baseVal.value *= 0.95;
             } 
           }         
         }
         break;
-        case 'h': {
-          if(evt.altKey) {
+        case 'KeyD': {
+          if(evt.shiftKey) {
             if(vb) {
-              vb.width *= 0.9;
-              vb.height *= 0.9;
+              vb.width *= 0.95;
+              vb.height *= 0.95;
             }
           } else {
             if(elem) {
-              elem.width.baseVal.value *= 1.1;
-              elem.height.baseVal.value *= 1.1;          
+              elem.width.baseVal.value *= 1.05;
+              elem.height.baseVal.value *= 1.05;          
             }
           } 
         }
         break;
-        case 'c': {
+        case 'KeyX': {
+          if(evt.shiftKey) {
+            if(elem) {
+              elem.style.left = `${brush.memory.x}px`;
+            }
+          } else {
+            if(elem) {
+              brush.memory.x = parseFloat(elem.style.left);
+            } else if(bg) {
+              brush.memory.x = bg.getBoundingClientRect().left;
+            }
+          }
+        }
+        break;
+        case 'KeyY': {
+          if(evt.shiftKey) {
+            if(elem) {
+              elem.style.top = `${brush.memory.y}px`;
+            }
+          } else {
+            if(elem) {
+              brush.memory.y = parseFloat(elem.style.top);
+            } else if(bg) {
+              brush.memory.y = bg.getBoundingClientRect().top;
+            }
+          }
+        }
+        break;
+        case 'KeyW': {
+          if(evt.shiftKey) {
+            if(elem) {              
+              elem.width.baseVal.value = brush.memory.w;
+            }
+          } else {
+            if(elem) {
+              brush.memory.w = elem.width.baseVal.value;
+            } else if(bg) {
+              brush.memory.w = bg.getBoundingClientRect().width;
+            }
+          }
+        }
+        break;
+        case 'KeyH': {
+          if(evt.shiftKey) {
+            if(elem) {              
+              elem.height.baseVal.value = brush.memory.h; 
+            }
+          } else {
+            if(elem) {
+              brush.memory.h = elem.height.baseVal.value;
+            } else if(bg) {
+              brush.memory.h = bg.getBoundingClientRect().height;
+            }
+          }
+        }
+        break;
+        case 'KeyC': {
           if(elem) {
             brush.memory.w = elem.width.baseVal.value;
             brush.memory.h = elem.height.baseVal.value;
@@ -102,15 +158,24 @@ function keydown({brush, viewBox}) {
           }
         }
         break;
-        case 'v': {
+        case 'KeyV': {
           if(elem) {
             elem.width.baseVal.value = brush.memory.w;
             elem.height.baseVal.value = brush.memory.h; 
           }          
         }
         break;
-        case 'z' : {
-          md.brush.init({brush});
+        case 'KeyZ' : {
+          if(evt.shiftKey) {
+            if(vb) {
+              vb.x = 0;
+              vb.y = 0;
+              vb.width = 512;
+              vb.height = 512;
+            }
+          } else {
+            md.brush.init({brush});
+          }          
         }
         break;
         case 'Delete': {
@@ -126,7 +191,7 @@ function keydown({brush, viewBox}) {
         }
         break;
         default: {
-          console.log(evt);
+          // console.log(evt);
         }
         break;
       }

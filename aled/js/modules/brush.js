@@ -19,15 +19,22 @@ export function init({brush}) {
 export function status({brush}) {
   if(brush.pickedElem) {
     const elem = brush.pickedElem;    
-    $("#brush-info").text (`brush   w: ${pad(elem.width.baseVal.value)} | h: ${pad(elem.height.baseVal.value)}`);    
+    $("#brush-info").text
+      (`brush   x: ${pad(parseFloat(elem.style.left))} | y: ${pad(parseFloat(elem.style.top))}` + 
+      ` | w: ${pad(elem.width.baseVal.value)} | h: ${pad(elem.height.baseVal.value)}` +
+      ` | name: ${pad(elem.getAttribute('name'))}`);
   }
   if(brush.pickedBg) {
     const bg = brush.pickedBg;
-    $("#bg-info").text    (`bg      w: ${pad(bg.getBoundingClientRect().width)} | h: ${pad(bg.getBoundingClientRect().height)}`);
+    const rect = bg.getBoundingClientRect();
+    $("#bg-info").text    
+      (`bg      x: ${pad(rect.left)} | y: ${pad(rect.top)}` +
+      ` | w: ${pad(rect.width)} | h: ${pad(rect.height)}`);
   }
   if(brush.memory) {
     const mem = brush.memory;
-    $("#memory-info").text(`memory  w: ${pad(mem.w)} | h: ${pad(mem.h)}`);
+    $("#memory-info").text
+      (`memory  x: ${pad(mem.x)} | y: ${pad(mem.y)} | w: ${pad(mem.w)} | h: ${pad(mem.h)}`);
   }
 }
 /**
