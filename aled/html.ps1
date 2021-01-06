@@ -1,0 +1,1 @@
+New-Object -Com "HTMLFile"

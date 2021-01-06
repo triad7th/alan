@@ -21,7 +21,6 @@ img {
   width: 1920px;
   height: 1080px;
   contain: strict;
-  background-color: grey;
   overflow: hidden;
   border-width: 1px;
   border-style: solid;

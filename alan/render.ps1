@@ -3,13 +3,14 @@ param(
     [parameter(
         Mandatory         = $false,
         ValueFromPipeline = $true)]
-    $item,
-    $video
+    $item
 )
 
 $url = "http://localhost:8080?render"
-if ($video -eq $null) {
-    $video = $item.BaseName + ".mp4"
-}
+$path = "$((gl).Path)\video"
 
-& "node" "C:\repos_ext\html5-animation-video-renderer\render.js" --url $url --video $video
+mkdir "$path\$item" -Force | Out-Null
+$video = "$path\$item\$item-video.mp4"
+$log = "$path\$item\$item-video.log"
+
+& "node" "C:\repos_ext\html5-animation-video-renderer\render.js" --url $url --video $video | tee $log

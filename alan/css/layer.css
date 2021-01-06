@@ -11,6 +11,7 @@
   transform: translate(-50%, -50%);    
 }
 
+/*
 .P {
   z-index: -100;
 }
@@ -20,6 +21,7 @@
 .C {    
   z-index: -300;
 }
+*/
 /* .C > img {
   filter: drop-shadow(rgb(0, 0, 0) 5px 5px 4px);
 } */
