@@ -18,6 +18,12 @@ $BASE_HEIGHT = 800
 $BASE_LEFT = 400
 $BASE_TOP = 400
 
+"Set Update(SVG)"
+"-" * "Set Update(SVG)".Length
+"package: $((gi $itemlist).FullName)"
+"scenepath: $((gi $scenepath).FullName)"
+"svgPath: $((gi $svgpath).FullName)"
+
 function main()
 {
   $basepath = (gi $itemlist).PSParentPath
@@ -44,13 +50,11 @@ function main()
     $path = "$($scenepath)$($item.character)\"
     # [bg]
     # overwrite dad.svg using $p[0].bg.outerHTML
-    $item.bg.outerHTML | Out-File "$($path)$($item.character).svg" -Force | Out-Null
+    $item.bg.outerHTML | Out-File "$($path)$($item.character).svg" -Force -Verbose | Out-Null
 
     addSvg $path "eyel" $item | Out-Null        
     addSvg $path "eyer" $item | Out-Null       
   }
-  
-  $pack  
 }
 function addSvg($path, $type, $item)
 {
@@ -62,7 +66,7 @@ function addSvg($path, $type, $item)
   # create a folder dad_eyel
   mkdir "$($path)$($name)" -Force
   # create a svg file dad_eyel.svg using eyel.js from 'svgInfo.src'
-  $svgInfo.src | Out-File "$($path)$($name)\$name.svg" -Force
+  $svgInfo.src | Out-File "$($path)$($name)\$name.svg" -Force -Verbose
 
   # create a json file dad_eyel.json using eyel.js from aled svgs folder    
   #  getting type from 'svgInfo.type'

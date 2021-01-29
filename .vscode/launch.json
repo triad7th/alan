@@ -5,9 +5,16 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Debug",
+      "type": "PowerShell",
+      "request": "launch",
+      "script": "${file}",
+      "cwd": "${file}"
+    },
+    {
       "type": "node",
       "request": "launch",
-      "name": "Launch Program",
+      "name": "aled server",
       "skipFiles": [
         "<node_internals>/**"
       ],

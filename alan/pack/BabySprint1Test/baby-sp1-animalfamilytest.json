@@ -1,0 +1,8 @@
+{
+  "Midi": ".\\audio\\ff_type_003.mid",
+  "Set": ".\\sets\\ff",
+  "Audio": ".\\audio\\ff_type_001.mp3",
+  "SvgPack": "..\\aled\\library\\images\\pj-bebtest.json",
+  "SvgApplyPath": "\\scene\\hand\\family",
+  "SvgPath": "..\\aled\\library\\svgs"
+}
