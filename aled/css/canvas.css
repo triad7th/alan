@@ -56,11 +56,18 @@
   top: 1110px;
   font-family: consolas;
 }
-#help-info {
+#file-info {
   display: block;
   position: absolute;
   left: 10px;
   top: 1130px;
+  font-family: consolas;
+}
+#help-info {
+  display: block;
+  position: absolute;
+  left: 10px;
+  top: 1150px;
   font-family: consolas;
 }
 .brush-item {

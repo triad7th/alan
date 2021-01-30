@@ -4,7 +4,7 @@ const methods = require('./method');
 //create a server object:
 http.createServer(function (req, res) {
   res.writeHead(200, {
-    'Access-Control-Allow-Origin': 'http://localhost:8080',
+    'Access-Control-Allow-Origin': 'http://localhost:8081',
     'Content-Type': 'application/json'});
     
   // handle by method

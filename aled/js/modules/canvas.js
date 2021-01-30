@@ -15,10 +15,12 @@ export function init({canvas}) {
 /**
  * show status
  */
-function status({viewBox}) {
+function status({viewBox, brush}) {
   if(viewBox) {
     const vb = viewBox;
-    $("#viewbox-info").text(`viewbox x: ${pad(vb.x)} | y: ${pad(vb.y)} | w: ${pad(vb.width)} | h: ${pad(vb.height)}`);    
+    $("#viewbox-info").text (`viewbox x: ${pad(vb.x)} | y: ${pad(vb.y)} | w: ${pad(vb.width)} | h: ${pad(vb.height)}`);
+    $("#file-info").text    (`file     : ${pad($(".canvas-item").attr("name"), 50)}`);
+    //$("#file-info").text    (`file     : ${$(".canvas-item").attr("name")}`);
   }
 
 }
