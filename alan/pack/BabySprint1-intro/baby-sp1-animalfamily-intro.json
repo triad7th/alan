@@ -1,0 +1,8 @@
+{
+  "Midi": ".\\audio\\allyworld_intro.mid",
+  "Set": ".\\sets\\intro",
+  "Audio": ".\\audio\\allyworld_intro.wav",
+  "SvgPack": "..\\aled\\library\\images\\pj-none.json",
+  "SvgApplyPath": "\\scene",
+  "SvgPath": "..\\aled\\library\\svgs"
+}

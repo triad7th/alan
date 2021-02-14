@@ -69,7 +69,9 @@ export class Scene {
   static isWidget(track) { if(track.track_name[0] === '#') return true; else false; }
   static getName(track) { return track.track_name.slice(1); }
   static conDecoration(info, dom) {
-    if(info.class) dom.classList.add(info.class);
+    if(info.class) for(const cls of info.class.split(' ')) {
+      dom.classList.add(cls);
+    }      
     else {
       dom.classList.add('fit');
       dom.classList.add('shadow');

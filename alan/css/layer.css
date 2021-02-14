@@ -39,3 +39,7 @@
   width: initial;
   height: initial;
 }
+
+.blur {
+  filter: blur(8px);
+}

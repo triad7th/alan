@@ -1,0 +1,13 @@
+{
+  "type": "image",
+  "x": 1500,
+  "y": 750,
+  "w": 3000,
+  "h": 1500,
+  "ah": 0,
+  "src": "3826.JPG",
+  "class": "fit blur",
+  "choreo": {
+    "C 6": { "type": "focusNoEase", "x": -850, "y": 0, "scale": 1, "rotate": 0 }
+  }
+}

@@ -47,7 +47,6 @@ $LogoPatorjksCheese
 "-" * "Movie Generator".Length
 "Run at: $Now"
 ""
-
 # set
 $scenePath = "$Set\$SvgApplyPath\"
 & "..\aled\parse.ps1" $SvgPack $scenePath "$SvgPath\"
@@ -72,9 +71,36 @@ if ($Export) {
     # audio
     ""
     $audioPath = "$((gl).Path)\video\$Name"
-    $audioFile = "$audioPath\$Name-audio.mp3"
+    $audioFile = "$audioPath\$Name-audio$((gi $Audio).Extension)"
     $moviePath = "$((gl).Path)\video\$Name"
     $movieFile = "$moviePath\$Name.mp4"
+
     copy $Audio $audioFile -Force -Verbose
     & ".\pwsh\audio.ps1" $videoFile $audioFile $movieFile
+
+    $indexHtmlFile = "$((gl).Path)\index.html"
+    $indexHtml = gc $indexHtmlFile
+    $lineToChange = $indexHtml | sls 'id="song"'
+    $replaceText = $lineToChange.Line -replace '(src=\"audio\/)(.*)(\">)', "`$1$Audio`$3"
+    $indexHtml[$lineToChange.LineNumber - 1] = $replaceText
+
+    "Html : $indexHtmlFile"
+    "Line : $replaceText"
+
+    $indexHtml | Out-File $indexHtmlFile -Force
+} else 
+{
+    # audio
+    "Audio"
+    "-" * "Audio".Length
+    $indexHtmlFile = "$((gl).Path)\index.html"    
+    $indexHtml = gc $indexHtmlFile
+    $lineToChange = $indexHtml | sls 'id="song"'
+    $replaceText = $lineToChange.Line -replace '(src=\"audio\/)(.*)(\">)', "`$1$((Get-Item $Audio).Name)`$3"
+    $indexHtml[$lineToChange.LineNumber - 1] = $replaceText
+
+    "Html : $indexHtmlFile"
+    "Line : $replaceText"
+
+    $indexHtml | Out-File $indexHtmlFile -Force
 }
