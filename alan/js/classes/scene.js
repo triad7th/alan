@@ -41,6 +41,10 @@ export class Scene {
       case 'svg': {
         info['content'] = Scene.conFromSvg(info);
       }
+      break;
+      case 'text': {
+        info['content'] = Scene.conFromText(info);
+      }
     }
     if(parent) return parent.addChild(new Widget(info));
       else return this.addChild(set.name, new Widget(info));
@@ -98,5 +102,13 @@ export class Scene {
     div.innerHTML = info.src.trim();
     const svg = div.firstChild;
     return this.conDecoration(info, svg);
+  }
+  static conFromText(info) {
+    // create a dome elem from text
+    const div = document.createElement('div');
+    $(div).text(info.src);
+    div.style.cssText = info.style;
+    
+    return this.conDecoration(info, div);
   }
 }

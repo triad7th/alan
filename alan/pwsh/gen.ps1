@@ -8,6 +8,7 @@ param(
     $SvgPack = '..\aled\Library\images\pj-beb.json',
     $SvgApplyPath = '\scene\hand\family',
     $SvgPath = '..\aled\library\svgs',
+    $Consts = {},
     [bool]$Export = $false
 )
 
@@ -52,8 +53,41 @@ $scenePath = "$Set\$SvgApplyPath\"
 & "..\aled\parse.ps1" $SvgPack $scenePath "$SvgPath\"
 ""
 
+# set update(consts)
+"Set Update(Consts)"
+"-" * "Set Update(Consts)".Length
+$Consts | fl
+$updated = $false
+dir "$Set\*.json" -Recurse | foreach {    
+    $con = gc $_
+    foreach($const in $Consts.psobject.Properties) {$con = $con -replace "<<<$($const.Name)>>>", "$($const.Value)"}
+    if (compare $con (gc $_)) {
+        $updated = $true
+        "Updated: $($_.FullName)"
+        copy $_.FullName "$($_.FullName).bak" -Force
+        $con | Out-File $_ -Force -Verbose
+    }
+}
+if (!$updated) {"Nothing to update."}
+""
+
 # build
 & '.\pwsh\build.ps1' $midi $set
+""
+
+# set rollback(consts)
+"Set Rollback(Consts)"
+"-" * "Set Rollback(Consts)".Length
+$baks = (dir "$Set\*.bak" -Recurse)
+if ($baks) {
+    $baks | foreach {    
+        "Rollback: $($_.FullName)"
+        copy $_ ($_.FullName -replace "\.bak$", "") -Force -Verbose
+        rm $_ -Force -Verbose
+    }
+} else {    
+    "Nothing to rollback."
+}
 ""
 
 if ($Export) {
@@ -81,7 +115,7 @@ if ($Export) {
     $indexHtmlFile = "$((gl).Path)\index.html"
     $indexHtml = gc $indexHtmlFile
     $lineToChange = $indexHtml | sls 'id="song"'
-    $replaceText = $lineToChange.Line -replace '(src=\"audio\/)(.*)(\">)', "`$1$Audio`$3"
+    $replaceText = $lineToChange.Line -replace '(src=\"audio\/)(.*)(\">)', "`$1$((Get-Item $Audio).Name)`$3"
     $indexHtml[$lineToChange.LineNumber - 1] = $replaceText
 
     "Html : $indexHtmlFile"

@@ -14,7 +14,7 @@ if (Test-Path $packPath) {
         $args | ft
         $Name
 
-        & ".\genlog.ps1" $Name $args.Midi $args.Set $args.Audio $args.SvgPack $args.SvgApplyPath $args.svgPath $Export.IsPresent
+        & ".\genlog.ps1" $Name $args.Midi $args.Set $args.Audio $args.SvgPack $args.SvgApplyPath $args.SvgPath $args.Consts $Export.IsPresent 
     }
 } else {
     "No Package Found!"

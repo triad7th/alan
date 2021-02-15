@@ -1,0 +1,12 @@
+{
+  "type": "image",
+  "x": 960,
+  "y": 650,
+  "w": 400,
+  "h": 400,
+  "class": "fit",
+  "src": "castle.png",
+  "choreo": {
+    "C 1": { "type": "idle" }
+  }
+}

@@ -8,6 +8,7 @@ param(
     $SvgPack = '..\aled\library\images\pj-beb.json',
     $SvgApplyPath = '\scene\hand\family',
     $SvgPath = '..\aled\library\svgs',
+    $Consts = {},
     [bool]$Export = $false
 )
 
@@ -16,4 +17,4 @@ $logFile = "$path\$Name.log"
 
 mkdir "$path\$item" -Force | Out-Null
 
-& ".\pwsh\gen.ps1" $Name $Midi $Set $Audio $SvgPack $SvgApplyPath $SvgPath $Export | tee $logFile
+& ".\pwsh\gen.ps1" $Name $Midi $Set $Audio $SvgPack $SvgApplyPath $SvgPath $Consts $Export | tee $logFile

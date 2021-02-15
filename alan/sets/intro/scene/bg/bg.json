@@ -8,6 +8,7 @@
   "src": "3826.JPG",
   "class": "fit blur",
   "choreo": {
-    "C 6": { "type": "focusNoEase", "x": -850, "y": 0, "scale": 1, "rotate": 0 }
+    "C 6": { "type": "focusNoEase", "x": -850, "y": 0, "scale": 1, "rotate": 0 },
+    "C 1": { "type": "idle" }
   }
 }

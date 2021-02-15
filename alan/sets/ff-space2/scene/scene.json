@@ -1,0 +1,18 @@
+{
+  "type": "image",
+  "x": 960,
+  "y": 540,
+  "w": 1920,
+  "h": 1080,
+  "src": "set.jpg",
+  "class": "overflow",
+  "style": { "left": -300, "top": -150, "width": 2500.0, "height": 1406.0},  
+  "choreo": {
+    "C 6": { "type": "focus", "x": 0, "y": 0, "scale": 1, "rotate": 0 },
+    "C#6": { "type": "focus", "x": 900, "y": 750, "scale": 3, "rotate": 75 },
+    "D 6": { "type": "focus", "x": 400, "y": 400, "scale": 3, "rotate": 30 },
+    "D#6": { "type": "focus", "x": -250, "y": 500, "scale": 3, "rotate": 0 },
+    "E 6": { "type": "focus", "x": -800, "y": 850, "scale": 3, "rotate": -35 },
+    "F 6": { "type": "focus", "x": -900, "y": 1300, "scale": 3, "rotate": -75 }
+  }
+}

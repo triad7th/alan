@@ -1,0 +1,11 @@
+{
+  "Midi": ".\\audio\\allyworld_title.mid",
+  "Set": ".\\sets\\title",
+  "Audio": ".\\audio\\allyworld_title.mp3",
+  "SvgPack": "..\\aled\\library\\images\\pj-none.json",
+  "SvgApplyPath": "\\scene",
+  "SvgPath": "..\\aled\\library\\svgs",
+  "Consts": {
+    "title": "Finger Family - Animal Version 3"
+  }
+}

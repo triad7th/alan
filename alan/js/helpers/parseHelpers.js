@@ -16,10 +16,17 @@ function note(wg, msg) {
 					var tl = wg.getLayer('C1').tl;
 					tl.to(id, {x: choreo.x, y: choreo.y, scale: choreo.scale, rotate: choreo.rotate, duration: msg.dSecs - dGap, ease: "power2.out", force3D: false}, msg.ABST);
 				}
+				break;
 				case "focusNoEase": {
 					const id = wg.getLayer('C1').id;
 					var tl = wg.getLayer('C1').tl;
 					tl.to(id, {x: choreo.x, y: choreo.y, scale: choreo.scale, rotate: choreo.rotate, duration: msg.dSecs - dGap, force3D: false}, msg.ABST);
+				}
+				break;
+				case "idle": {
+					const id = wg.getLayer('P1').id;
+					var tl = wg.getLayer('P1').tl;
+					tl.to(id, {duration: msg.dSecs - dGap}, msg.ABST);
 				}
 				break;
 			}

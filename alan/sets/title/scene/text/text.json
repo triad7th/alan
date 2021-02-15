@@ -1,0 +1,10 @@
+{
+  "type": "text",
+  "x": 990,
+  "y": 250,
+  "w": 1920,
+  "h": 100,
+  "class": "shadow-pink",
+  "style": "font-size: 100px; font-family: fantasy; color: hotpink; text-align:center",
+  "src": "<<<title>>>"
+}

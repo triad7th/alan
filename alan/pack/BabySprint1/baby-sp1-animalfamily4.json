@@ -1,6 +1,6 @@
 {
   "Midi": ".\\audio\\ff_type_003.mid",
-  "Set": ".\\sets\\ff",
+  "Set": ".\\sets\\ff-tropical1",
   "Audio": ".\\audio\\ff_type_001.mp3",
   "SvgPack": "..\\aled\\library\\images\\pj-animal4.json",
   "SvgApplyPath": "\\scene\\hand\\family",
