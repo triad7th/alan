@@ -1,7 +1,7 @@
 {
   "Midi": ".\\audio\\allyworld_outro.mid",
   "Set": ".\\sets\\outro",
-  "Audio": ".\\audio\\allyworld_outro.mp3",
+  "Audio": ".\\audio\\allyworld_outro.ogg",
   "SvgPack": "..\\aled\\library\\images\\pj-none.json",
   "SvgApplyPath": "\\scene",
   "SvgPath": "..\\aled\\library\\svgs"

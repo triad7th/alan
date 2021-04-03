@@ -1,7 +1,7 @@
 {
-  "Midi": ".\\audio\\ff_type_003.mid",
+  "Midi": ".\\audio\\allyworld_song.mid",
   "Set": ".\\sets\\ff-tropical1",
-  "Audio": ".\\audio\\ff_type_001.mp3",
+  "Audio": ".\\audio\\allyworld_song.ogg",
   "SvgPack": "..\\aled\\library\\images\\pj-animal4.json",
   "SvgApplyPath": "\\scene\\hand\\family",
   "SvgPath": "..\\aled\\library\\svgs"
