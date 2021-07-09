@@ -3,7 +3,7 @@ param(
     [parameter(
         Mandatory         = $false,
         ValueFromPipeline = $true)]
-    $itemlist = '.\library\images\pj-beb.json',
+    $itemlist = '.\library\images\pj-animal1.json',
     $scenepath = '..\alan\sets\ff\scene\hand\family\',
     $svgpath = '.\library\svgs\'
 )
@@ -29,10 +29,10 @@ function main()
   $basepath = (gi $itemlist).PSParentPath
   $pack = @()
   
-  ((gc $itemlist) | ConvertFrom-Json).PSObject.Properties | foreach {
+  ((Get-Content $itemlist) | ConvertFrom-Json).PSObject.Properties | ForEach-Object {
     # get width, height from  {name}.json
-    $info = (gc "$($scenepath)$($_.Name)\$($_.Name).json") | ConvertFrom-Json
-    $json = (gc ("$basepath\$($_.Value).json")) | ConvertFrom-Json
+    $info = (Get-Content "$($scenepath)$($_.Name)\$($_.Name).json") | ConvertFrom-Json
+    $json = (Get-Content ("$basepath\$($_.Value).json")) | ConvertFrom-Json
     $item = @{
       character = $_.Name
       name = $_.Value      
@@ -52,8 +52,20 @@ function main()
     # overwrite dad.svg using $p[0].bg.outerHTML
     $item.bg.outerHTML | Out-File "$($path)$($item.character).svg" -Force -Verbose | Out-Null
 
-    addSvg $path "eyel" $item | Out-Null        
-    addSvg $path "eyer" $item | Out-Null       
+    @("eyel", "eyer") | ForEach-Object {
+      if ($item[$_]) {
+        addSvg $path $_ $item | Out-Null        
+      } else {
+        removeSvg $path $_ $item
+      }  
+    }    
+  }
+}
+function removeSvg($path, $type, $item)
+{
+  $name = "$($item.character)_$type"
+  if (Test-Path "$($path)$($name)") {
+    Remove-Item "$($path)$($name)" -Force -Recurse -Verbose
   }
 }
 function addSvg($path, $type, $item)
@@ -64,7 +76,7 @@ function addSvg($path, $type, $item)
   $scaledInfo = $item[$type].scaledInfo
 
   # create a folder dad_eyel
-  mkdir "$($path)$($name)" -Force
+  mkdir "$($path)$($name)" -Force -Verbose
   # create a svg file dad_eyel.svg using eyel.js from 'svgInfo.src'
   $svgInfo.src | Out-File "$($path)$($name)\$name.svg" -Force -Verbose
 
@@ -86,71 +98,73 @@ function addSvg($path, $type, $item)
 function getSvg($type, $className, $item)
 {
   $dom = $html.querySelector($className)
-  $scale = $item.scale
-  $svg = "$($svgpath)$type.js"
-  # get style top
-  $top = $null
-  if ($dom.style.top) {
-    $top = [float]($dom.style.top -replace ("(-?\d+)px", '$1'))
-    $dom.style.removeAttribute('top')
-  }
-  # get style left
-  $left = $null
-  if ($dom.style.left) {
-    $left = [float]($dom.style.left -replace ("(-?\d+)px", '$1'))
-    $dom.style.removeAttribute('left')
-  }
-  # get attr height
-  $height = $null
-  if ($dom.hasAttribute('height')) {
-    $height = [float]($dom.getAttribute('height'))
-    $dom.removeAttribute('height')
-  }
-  # get attr width
-  $width = $null
-  if ($dom.hasAttribute('width')) {
-    $width = [float]($dom.getAttribute('width'))
-    $dom.removeAttribute('width')
-  }
+  if ($dom) {
+    $scale = $item.scale
+    $svg = "$($svgpath)$type.js"
+    # get style top
+    $top = $null
+    if ($dom.style.top) {
+      $top = [float]($dom.style.top -replace ("(-?\d+)px", '$1'))
+      $dom.style.removeAttribute('top')
+    }
+    # get style left
+    $left = $null
+    if ($dom.style.left) {
+      $left = [float]($dom.style.left -replace ("(-?\d+)px", '$1'))
+      $dom.style.removeAttribute('left')
+    }
+    # get attr height
+    $height = $null
+    if ($dom.hasAttribute('height')) {
+      $height = [float]($dom.getAttribute('height'))
+      $dom.removeAttribute('height')
+    }
+    # get attr width
+    $width = $null
+    if ($dom.hasAttribute('width')) {
+      $width = [float]($dom.getAttribute('width'))
+      $dom.removeAttribute('width')
+    }
+    
+    # remove id
+    $dom.removeAttribute('id') | Out-Null
+    # remove xml namespace
+    $outerHTML = [Regex]::Replace(
+      $dom.outerHTML,
+      "<\?XML:NAMESPACE.+?\/>",
+      "",
+      [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
+    # add double quotation for class
+    $outerHTML = [Regex]::Replace(
+      $outerHTML,
+      "\sclass=([\d\w]+)\s",
+      ' class="$1" ')
   
-  # remove id
-  $dom.removeAttribute('id') | Out-Null
-  # remove xml namespace
-  $outerHTML = [Regex]::Replace(
-    $dom.outerHTML,
-    "<\?XML:NAMESPACE.+?\/>",
-    "",
-    [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
-  # add double quotation for class
-  $outerHTML = [Regex]::Replace(
-    $outerHTML,
-    "\sclass=([\d\w]+)\s",
-    ' class="$1" ')
-
-  # get svg info
-  $svgInfo 
-
-  return @{
-    'dom' = $dom
-    'outerHTML' = $outerHTML
-    'baseInfo' = @{
-      'top' = $top
-      'left' = $left
-      'height' = $height
-      'width' = $width
+    # get svg info
+    return @{
+      'dom' = $dom
+      'outerHTML' = $outerHTML
+      'baseInfo' = @{
+        'top' = $top
+        'left' = $left
+        'height' = $height
+        'width' = $width
+      }
+      'scaledInfo' = @{
+        'top' = ($top + $BASE_TOP) * $scale.x + ($height * $scale.h) / 2
+        'left' = ($left + $BASE_LEFT) * $scale.y + ($width * $scale.w) / 2
+        'height' = $height * $scale.h
+        'width' = $width * $scale.w
+      }
+      'svgInfo' = (Test-Path $svg) ? (& {
+        $arr = gc $svg
+        $arr[0] = '{'
+        $arr | ConvertFrom-Json
+      }) : $null
     }
-    'scaledInfo' = @{
-      'top' = ($top + $BASE_TOP) * $scale.x + ($height * $scale.h) / 2
-      'left' = ($left + $BASE_LEFT) * $scale.y + ($width * $scale.w) / 2
-      'height' = $height * $scale.h
-      'width' = $width * $scale.w
-    }
-    'svgInfo' = (Test-Path $svg) ? (& {
-      $arr = gc $svg
-      $arr[0] = '{'
-      $arr | ConvertFrom-Json
-    }) : $Null
-  }
+  } else {
+    return $null
+  }  
 }
 function parse($item)
 {  
